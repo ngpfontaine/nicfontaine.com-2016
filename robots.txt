@@ -1,0 +1,12 @@
+User-Agent: *
+Noindex: /sites
+Noindex: /dev
+Noindex: /wp-admin
+Noindex: /videos.html
+Noindex: /modeling.html
+Noindex: /images/nf_resume_generalArt.pdf
+Noindex: /m
+
+Disallow: /videos.html
+Disallow: /modeling.html
+Disallow: /images/nf_resume_generalArt.pdf

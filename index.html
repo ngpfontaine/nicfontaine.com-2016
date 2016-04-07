@@ -1,0 +1,811 @@
+<!doctype html>
+<html onclick="cliInputFocus();">
+<head>
+  <title>Designer, Developer, 2D & 3D Artist - Nic Fontaine</title>
+  <meta name="description" content="Graphic and User Experience Design, Web Development, Animation, Hardware Tinkering, Freelance - Currently In Asheville, NC">
+  <meta content="text/html" charset="utf-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://nicfontaine.com">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body onload="loadWelcome();">
+  <div id="bg-pattern"></div>
+  <!--<div id="bg-letter">CN</div>-->
+  <header id="header">
+    <div id="header-inner">
+      <div id="header-blend" class="pos-abs"></div>
+      <!-- <div id="header-nav">/////////////// -->
+      <div id="header-nav">
+          &nbsp;
+      </div>
+    </div>
+  </header>
+
+  <nav id="cmd-container">
+    <div id="cmd-outer">
+      <div id="cmd-input-container" class="pos-rel">
+        <div id="cmd">
+          <span id="cmd-span" class="pos-rel"></span>
+          <div id="cursor" class="pos-abs"></div>
+
+        </div>
+
+          <input type="text" id="cmd-input-hidden" class="pos-abs" autocomplete="off">
+      </div>
+    </div>
+    <div id="cmd-list-container">
+    <div id="cmd-list-inner">
+        <div id="cmd-list">
+        </div>
+    </div>
+    </div>
+  </nav>
+
+  <section id="no-js-container" class="post pos-rel">
+    <p>Welcome to the personal site of Nic Fontaine, it looks like you have Javascript disabled.</p>
+    <p>I encourage you to enable it and refresh; I promise you have nothing to worry about. I am not gathering any personal info (unless you decide to email me of course).<p>
+    <p style="text-align: center; margin-bottom: 0;">Thanks, and enjoy!</p>
+  </section>
+
+  <section id="mobile-pending-container" class="post pos-rel">
+    <h3>Mobile Site</h3>
+    <p>I do apologise, but the mobile site is still in development.</p>
+    <p>Normally any site I make would be fully responsive, but due to the unique nature and functionality of this project it must be designed in parallel.<p>
+    <p>Thanks, and check back soon. In the meantime I encourage you to experience this on a desktop.</p>
+  </section>
+
+  <div id="content-container" class="pos-rel fl-r">
+    <div id="content-inner">
+
+      <div id="full-confirm" onclick="launchIntoFullscreen(document.documentElement);">Click Box To Confirm</div>
+
+      <section id="scroll-home">
+        <div class="section-bg pos-abs"><img src="images/article_bg_headshot_c.png" alt="background image of a business shot of myself"></div>
+        <div class="scroll-bar"></div>
+        <h1>HOME</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+          <div class="section-inner" id="section-id">
+            <div class="padding-inner">
+
+              <div id="instructions-cli-container">
+              <h3>Basic Instructions</h3>
+
+              <p><i class="fa fa-bolt"></i> Welcome to my unconvential, command line based website</p>
+
+              <p><i class="fa fa-bolt"></i> Enter your commands at the <span class="bold">top left</span> and output will appear below</p>
+
+              <p><i class="fa fa-bolt"></i> No need for a mouse - type, and use your <span style="bold">arrow keys</span> for scroll</p>
+
+              <p><i class="fa fa-bolt"></i> To list all <span class="bold">main navigation</span> sections type <span class="font-code-bracket">&gt;</span><span class="font-code"> LS</span> and hit the <span class="bold">ENTER</span> key<!-- or <span class="font-code-bracket">&gt;</span><span class="font-code"> DIR</span> (for you windows shell users).--></p>
+
+              <p><i class="fa fa-bolt"></i> To bring back this screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span></p>
+
+              <p><i class="fa fa-bolt"></i><span class="bold">Have Fun!</span></p>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section>
+          <div class="section-inner">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+          </div>
+          <div class="section-fade-bot pos-abs"></div>
+      </section>
+
+      <section id="scroll-art">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Art</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+        <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <article>
+                <figure>
+                  <h3>3MI Design - Branding</h3>
+                  <img src="images/art_3mi_02.jpg">
+                  <figcaption>
+                    <p>
+                      I created the visual style and assets for a media group under which I and two other colleagues were working on various projects. 3MI (in the cyrillic alphabet) in Ukrainian means 'media'. The feel of the website is very unique and fresh and I feel accomplishes the objective of translating the unique variety of services offered. We're all workind on seperate projects/employment but I'm still proud of the work accomplished and the entire visual package.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Red Bike - Branding</h3>
+                  <img src="images/art_red_bike_01.jpg">
+                  <figcaption>
+                    <p>
+                      An exercise in rebranding a bike-delivery sandwich shop at which i worked back in college. As intended I think it turned out perfectly overly professional for a local deli, and certainly a step up from the original bitmapped Power Point logo.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Don't Dread On Me - Concept Painting</h3>
+                  <img src="images/art_ddom_01.jpg">
+                  <figcaption>
+                    <p>
+                      Visual development for a game a friend and I were dreaming up one afternoon. "A runaway dread tries to escape the perils of a a degenerate dead-head's flat, along the way discovering his true potential as he embraces the fetid squalor from which he himself was born..." Or you know, a  grungy 2D infinite runner.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Bunker Blast - Game Art</h3>
+                  <img src="images/art_bunker_blast_01_c.jpg" alt="Promo game art for Bunker Blast">
+                  <figcaption>
+                    <p>
+                      A freelance project for The Littlest Golfer, Bunker Blast incorporates the original characters Sandy, Putter, Steve, and Stinky into a 2D brick-breaker/Peggle style Unity game. I created almost all of the art assets, sprite sheets, and character animation, took care of some level design, and developed the promo materials and logo. The game tours references to world famous courses in its four chapters. Honestly, for a kids game it's quite challenging, and the final level is pretty ridiculous.
+                    </p>
+                    <!-- <p>
+                      To try out a sample, use  <span class="font-code-bracket">&gt;</span><span class="font-code"> go bunkerblast</span>
+                    </p> -->
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Live 360 Logo Design</h3>
+                  <img src="images/art_live_360_logos_01.png">
+                  <figcaption>
+                    <p>
+                      Logo development for a new Broker Agency out of Charleston, South Carolina.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Mulligan</h3>
+                  <!-- <img src="images/art_bunker_blast_01_c.jpg"> -->
+                  <figcaption>
+                    <p>
+                      [content to come]
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+            </div>
+          </div>
+        <div class="section-no-dots"></div>
+        <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-skills">
+        <div class="scroll-bar"></div>
+        <!-- <div class="section-bg pos-abs"><img src="images/article_bg_headshot_c.png"></div> -->
+        <h1 class="menu-main-h1">Skills</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+        <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+            <h3>Fluency</h3>
+            <i class="fa fa-html5"></i> <span class="bold">HTML5</span>
+            <p>Latest standards, semantic markup, forms, clean, responsive code layout, email coding</p>
+            <i class="fa fa-css3"></i> <span class="bold">CSS3</span>
+            <p>Media queries, animations, flexbox, repaint/reflow analysis</p>
+            <i class="fa fa-rocket"></i> <span class="bold">Javascript</span>
+            <p>Vanilla JS, JQuery, Phaser</p>
+            <i class="fa fa-code"></i> <span class="bold">PHP</span>
+            <p>Wordpress theme building</p>
+
+            <h3>Technology/Software</h3>
+            <i class="fa fa-crop"></i> <span class="bold">Adobe</span>
+            <p>Photoshop, Illustrator, After Effects, Premeire</p>
+            <i class="fa fa-linux"></i> <span class="bold">GNU Linux - Desktop and Server</span>
+            <p>Arch and Ubuntu based systems, shell, file transfer, ssl integration, https redirection, system maintenance, permissions</p>
+            <i class="fa fa-wordpress"></i> <span class="bold">Wordpress</span>
+            <p>Codex, mySql DB, child theme customization, load time and pagespeed analysis</p>
+            <i class="fa fa-terminal"></i> <span class="bold">Chrome & Firefox Dev Tools</span>
+            <p>Inspector, console debugging, network profiling, process monitoring, device testing</p>
+            <i class="fa fa-file-code-o"></i> <span class="bold">Text Editors/IDEs</span>
+            <p>Webstorm, Atom, Sublime Text, Nano</p>
+            <i class="fa fa-paint-brush"></i> <span class="bold">3D</span>
+            <p>Luxology Modo, Zbrush, and Maya from modeling to rendering</p>
+            <i class="fa fa-google"></i> <span class="bold">Google</span>
+            <p>Analytics, Adwords, and Google Web Designer - image and HTML5 ads, user behaviour and metrics, goals and tracking code implementation, customization, and debugging</p>
+            <i class="fa fa-cogs"></i> <span class="bold">Visual Website Optimizer</span>
+            <p>A/B, split url, and multi-variant testing, heatmap and behaviour recording analysis, and reporting</p>
+            <h3>Other</h3>
+            <i class="fa fa-bullhorn"></i> <span class="bold">Email Marketing</span>
+            <p>Campaign Monitor, Mailchimp, responsive layout coding/testing/debugging, design for high CTR</p>
+            <i class="fa fa-forward"></i> <span class="bold">Wireframing, Storyboarding, and Prototyping</span>
+            <p>UX, user flow, diagramming, and visual development for interactive and entertainment pieces.</p>
+            <i class="fa fa-plug"></i> <span class="bold">Computer Hardware / IOT</span>
+            <p>Building hardware controllers with Atmel processors, firmware tinkering, enclosure design and construction</p>
+          </div>
+          </div>
+        <div class="section-no-dots"></div>
+        <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+
+      <section id="scroll-games">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Games</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+        <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+
+              <article>
+                <figure>
+                  <h3>Bunker Blast</h3>
+                  <img src="images/games_bunker_blast_01.jpg">
+                  <figcaption></figcaption>
+                </figure>
+              </article>
+
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-web">
+        <div class="scroll-bar"></div>
+        <div class="section-bg pos-abs pos-abs"><img src="images/article_bg_old_site.png" alt="post background image"></div>
+        <h1 class="menu-main-h1">Web</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+        <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+
+              <article>
+                <figure>
+                  <h3>JQuery Form Validation</h3>
+                  <div class="cont-img-inl">
+                    <img class="fl-l img-inl" src="images/web_form_validation_gif_02.gif" alt="gravity forms standard page refresh validation"><img class="fl-r img-inl" src="images/web_form_validation_gif_01.gif" alt="My custom on page validation for gravity forms">
+                  </div>
+                  <figcaption>
+                  <p>
+                    Unhappy with form validation on our landing pages at Element-360 I created an extension with JQuery, exclusively to extend the capabilities of Gravity Forms. In watching behaviour analysis recordings I found a large number of people clicking the CTA to immediately receive information. This results in a page reload with error messages appended to the required fields - not an optimal user experience.
+                  </p>
+                  <p>
+                    My goals were:
+                    <ul>
+                      <li>Live validation/disable button send until form fulfilled</li>
+                      <li>Blank required field UI change on button click</li>
+                      <li>Validation check (logic and visual) on field blur</li>
+                      <li>Email regex validation</li>
+                      <li>Safisfying, straightforward UX (people have very little tolerance on landing pages)</li>
+                    </ul>
+                  </p>
+                  <p>
+                    Additionally I implemented a button text update on send - as on slower networks, lag is generally perceived as a site bug and users will spam-click out of frustration. An easy way to prevent form submissions, while adding a useful onclick event, was to place a 'cover' button over the gravity forms send button. Clicks on the cover check required fields and add classes to notify the user. Field blur, focus, and change events check input validation and form completion, while adding and removing visual classes.
+                  </p>
+                  <p>
+                    I threw it up on Github and am still in the process of adding support, features, and fixes - you can check it out with <span class="font-code-bracket">&gt;</span><span class="font-code"> go gforms</span>
+                  </p>
+                </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Google Analytics</h3>
+                  <img src="images/cert_ga_201706.jpg">
+                  <figcaption>
+                  <p>
+                    I have extensive experience with event tracking, cross domain tracking, and analyzing data: especially behaviour flow and technology dimensions. In addition - Google Tag Manager, Google Adwords especially with image and HTML5 ad creation, Google Material Design specs, and Page Speed Analysis.
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>About My Website</h3>
+                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
+                  <figcaption>
+                  <p>
+                    I'm tired of wordpress themes and I enjoy the unix terminal, [full-stop].
+                  </p>
+                  <p>
+                    But really, I had a few objectives in making this site. I love using a keyboard; and have minimized reliance on mouse input for navigation almost as much as possible within browsers. So one goal was to give the user (1) a site they could navigate without moving their hands from the keyboard, while (2) challenging web-navigation conventions to give said user a unique and memorable experience.
+                  </p>
+                  <p>
+                    As a GNU Linux user, I naturally wanted to give unix-experienced users a familiar feel while introducing to the unaccustomed a small window into terminal commands and key navigation. As a front end web-developer, it was important to try something experimental; to run as far away from fullscreen img + headline + call-to-action as possible. Given, the mobile site is another problem left to tackle, I enjoy the UX I've created.
+                  </p>
+                  <p>
+                   Code wise - after starting to quickly prototype everything with JQuery, all events and DOM updates were swapped out with Vanilla JS as a challenge, learning experience, and optimization technique. Velocity.js is used for &lt;section&gt; movement and fade invoked with command calls, while other visual changes (like site colour shift) are mostly CSS animations.
+                   </p>
+                 </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Website Development</h3>
+                  <figcaption>
+                  <p>
+                    To see a list of the full sites I've designed and developed check out the <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span> section
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Adwords Display Ads</h3>
+                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
+                  <figcaption>
+                  <p>
+                    [content to come]
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Email Development</h3>
+                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
+                  <figcaption>
+                  <p>
+                    [content to come]
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>A/B Testing</h3>
+                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
+                  <figcaption>
+                  <p>
+                    [content to come]
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-about">
+        <div class="scroll-bar"></div>
+        <div class="section-bg pos-abs"><img src="images/article_bg_bb_c.png" alt="background image of a screenshot from Bunker Blast; a game for which I created the art."></div>
+        <h1 class="menu-main-h1">About</h1>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+            <p>
+              <div class="p-first">I</div><span>'m an Digital Artist and Developer currently living in Asheville, NC. I specialize in imaginative graphic branding and illustration, unique but functionally tested front-end web and UI/UX design, and 3D modeling and animation.</span>
+            </p>
+
+            <p>
+              Six years ago I was going pursue Art History (insert cute, scoffing emoji) - and today my professional accomplishments include:
+            </p>
+            <ul>
+              <li>Pilot creation of a 3D children's show</li>
+              <li>Prototyping an IOT authoring SaaS startup</li>
+              <li>Illustration and animation for a mobile Unity2D game</li>
+              <li>Design of hundreds of image ads, landing pages, responsive html emails for over 40 high-end national real estate communities</li>
+              <li>Development of personal portfolio sites for esteemed artists, thinkers, and colleagues</li>
+              <li>Google Analytics certification, extensive A/B testing and user behaviour analysis, and CRM database integration/management</li>
+            </ul>
+
+            <h4>Personal</h4>
+            <p>
+              I'm a North Florida migrant to Asheville, North Carolina for education at the University of North Carolina at Asheville, and a graduate of the New Media program specializing in 3D Animator under the tutelage esteemed industry professionals and trusted friends such as Christopher Oakley and Chris McKee.
+            <p>
+
+            <p>
+              My foundation is clean, but not stifled graphic design, my training is in classic 3D animation and modeling, and my most recent professionnal experience (NOTE) supplements with an extensive analysis and implementation of user-friendly, scalable, and to the point web-design and development.
+            </p>
+
+            <h4>Website Abstract (preaching, venting, perchance insightful?)</h4>
+
+            <p>
+              I have strong opinions on web design; well design in general, but as I spend have been spending most of my time in web-dev this site comes as a reaction to my day trade per-se.
+            </p>
+
+            <p>
+              The world really doesn't need another full-width slideshow, a web-page can be considered complete w/o a call-to-action above the fold. For that matter the term 'above-the-fold' is dead, no not dead, it was truly always irrelevant. As is 'mobile-first' in my mind, but I'll reserve that for a talk in person.
+            </p>
+
+            <p>
+              This site is an exercise in creativity, a bit of a personal challenge, a chance to write some actual code and not just throw some stock photos in a wordpress plugin, on a template filled with keywords strung together with prepositions. As well is it my throw at a new style/break/fresh-start, a chance to plan a creative and memorable user experience, contribute something memorable and entertaining to the web, and offer my work in a unique light - a bit of an unconvential portfolio environment.
+            </p>
+
+            <p>
+              I'll snip the manefesto (truly before it's time) and leave you to explore. I'd be happy and grateful to receive notifications of any bugs you encounter, general networking/professional introductions, contract inquiries of any size, or the like at my email address - <span style="font-weight: bold;">ngpfontaine@gmail.com</span>. Thank you, and have a good time during your stay.
+            </p>
+          </div>
+
+          </div>
+          <div class="section-fade-bot pos-abs pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-contact">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Contact</h1>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <h3>Email</h3>
+                <p>- ngpfontaine@gmail.com</p>
+              <h3>Twitter</h3>
+                <p>@arcovelo</p>
+              <h3>Linkedin</h3>
+                <p>www.linkedin.com/in/nic-fontaine-67304062</p>
+              <h3>Location</h3>
+                <p>Asheville, NC</p>
+              <h3>Phone</h3>
+                <p>850.766.6705</p>
+            </div>
+          </div>
+          <div class="section-fade-bot pos-abs pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-resume">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Resume</h1>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+          <div class="instructions-scroll pos-abs">[ scroll using &#8593; &amp; &#8595; arrows <span style="font-style: normal"> or HOME and END ]</span></div>
+      </section>
+
+      <section id="scroll-sites">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Sites</h1>
+        <div class="scroll-arrow-top"></div>
+        <div class="scroll-arrow-bot"></div>
+        <div class="section-fade-top pos-abs"></div>
+        <div class="scroll-bar-move pos-abs"></div>
+        <div class="section-inner">
+          <div class="padding-inner">
+
+            <article>
+              <figure>
+                <h3>3midesign.com</h3>
+                <img src="images/site_3mi_01.jpg" alt="Screenshots of 3midesign.com, a design and development collective of which I was a part - including designing the website in full">
+                <figcaption>
+                  <p>
+                    I created this portfolio website as a collective showcase of the work of two colleagues and myself for various freelance design and development projects we had taken on. I hadn't been working on much web design at the time so it was fun to develop with no restrictions and have an excuse to try and learn some new things along the way.
+                  </p>
+                  <p>
+                    I'm still very proud of the site even though we are no longer taking on clients, and feel that it offers a very one of a kind experience akin to an experimental yet polished project.
+                  </p>
+                  <p class="p-sites">
+                    <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go 3midesign</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <h3>silvermuse.net</h3>
+                <img src="images/site_silvermuse_01.jpg" alt="Screenshots of silvermuse.net, a website I created to display the work and services of a close friend and colleague Claudette Silver">
+                <figcaption>
+                  <p>
+                    The professional website of a close friend and colleague Claudette Silver - a custom Wordpress theme with a stripped down, minimal, yet still stylish and fresh feel.
+                  </p>
+                  <p>
+                    Claudette has strong opinions on what she does and does not like, and luckily for me her ideas are always fun and unconvential. Her reaction when I asked if she wanted a 'hamburger' menu was a priceless progression of confusion > research > disguist.
+                  </p>
+                  <p>
+                    She also loved my idea for an "anti-slideshow" atop the homepage. It's great to have a client who can appreciate and complain with the best of 'em.
+                  </p>
+                  <p class="p-sites">
+                    <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go silvermuse</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <h3>ianhaneylopez.com</h3>
+                <img src="images/site_ianhaneylopez_01.jpg" alt="Screenshots of ianhaneylopez.com, Wordpress site created for a professor of law at Berkeley.">
+                <figcaption>
+                  <p>
+                    I won't try to paraphrase Ian's ideas and insights as I feel that is better left to him, but for the technical info his site is a heavily modified theme built for regular additions of writings, interviews, and events & publications.
+                  </p>
+                  <p>
+                    I feel the site does a good job of cleanly hosting his work in a unique and memorable fashion while neither falling short and coming off as a basic blog theme or pushing too much design for the collegiate/political world.
+                  </p>
+                  <p class="p-sites">
+                    <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go ihl</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <h3>nicfontaine.com [2013]</h3>
+                <img src="images/site_2013_01.jpg" alt="Screenshot of my old website, with a very unique hand drawn feel.">
+                <figcaption>
+                  <p>
+                    In making my new site now I'm retiring what I developed immediately upon graduating college. Even before becoming jaded sifting through homogenous wordpress themes for hours, I wanted to make something like nothing else out there.
+                  </p>
+                  <p>
+                    Writing about my own work in retrospect and thinking about all I've learned and experienced since then I can say my desire to be unconventional and create one of a kind work hasn't changed.
+                  </p>
+                  <p>
+                     I still love the feel of that site, but it was time for a change. Usually I will polish something until I have to force myself to step away, then go back later to fix the things that bug me; but I think I will just leave this site as is. Similarly, I'll do the same for this site - I think the progression will tell a good story.
+                  </p>
+                  <p>
+                    <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go nic2013</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+          </div>
+        </div>
+        <div class="section-no-dots"></div>
+        <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-curse">
+        <div class="scroll-bar"></div>
+        <h5>Wow</h5>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <p>Watch yo language.</p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-else">
+        <div class="section-bg pos-abs"><img src="images/article_bg_venus_c.png" alt="background image of one of my 3D sculpts - Venus of Willendorf, created in Zbrush"></div>
+        <div class="scroll-bar"></div>
+        <h5>Error</h5>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <p><i class="fa fa-bolt"></i>Command <span class="font-code-bracket">&gt;</span><span id="cmd-error-in-post" class="font-code"></span>&nbsp; not found</p>
+              <p><i class="fa fa-bolt"></i>Misspell something? Use <span class="font-code-bracket">&gt;</span><span class="font-code">Back</span>&nbsp;</p>
+              <p><i class="fa fa-bolt"></i>To bring up the original welcome screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span></p>
+              <h3>Menu Items</h3>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ABOUT</span>
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SKILLS</span>
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span>
+              </p>
+              <!-- <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>
+              </p> -->
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> WEB</span>
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ART</span>
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> CONTACT</span>
+              </p>
+              <!-- <p>
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> RESUME</span>
+              </p> -->
+              <h3>External Links</h3>
+              <p>
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span>
+              </p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section id="scroll-back">
+        <div class="scroll-bar"></div>
+        <h5>Back</h5>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <p>To where?</p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+      </section>
+
+      <section id="scroll-confused">
+        <div class="scroll-bar"></div>
+        <h5>Welcome</h5>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <p>Looking for your cursor and menu links?</p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+      </section>
+
+      <section id="scroll-ls">
+        <div class="section-bg pos-abs"><img src="images/article_bg_mulligan_c.png" alt="background image of one of my illustrations - Mulligan the old scottish terrier"></div>
+        <div class="scroll-bar"></div>
+        <h1>List All</h1>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
+          <div class="section-inner">
+            <div class="padding-inner">
+              <h3>Menu Items</h3>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ABOUT</span>&nbsp; &nbsp; - my education, experience, interests, and this site
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SKILLS</span>&nbsp; &nbsp; - professional and freetime expertise and endeavours
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span>&nbsp; &nbsp; - showcase of websites I've built
+              </p>
+              <!-- <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>&nbsp; &nbsp; - game design, art, and development
+              </p> -->
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> WEB</span>&nbsp; &nbsp; - web design, ad campaigns, CRO, certification, etc.
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ART</span>&nbsp; &nbsp; - 2d illustration, graphite drawing, and 3d modeling and animation
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> CONTACT</span>&nbsp; &nbsp; - direct contact, social media handles, etc.
+              </p>
+              <!-- <p>
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> RESUME</span>&nbsp; &nbsp; - hosted pdf of my professional resume
+              </p> -->
+              <p>
+                <i class="fa fa-bolt"></i> To bring up the original welcome screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span>
+              </p>
+              <h3>External Links</h3>
+              <p>To bring up external links, like social media handles, combine "go" with the location
+              <p>
+                Examples:
+              </p>
+              <p><span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span></p>
+            </div>
+          </div>
+          <div class="section-no-dots"></div>
+          <div class="section-fade-bot pos-abs"></div>
+        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
+      </section>
+
+      <section>
+          <div class="section-inner">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+          </div>
+          <div class="section-fade-bot pos-abs"></div>
+      </section>
+
+      <section>
+          <div class="section-inner">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+          </div>
+          <div class="section-fade-bot pos-abs"></div>
+      </section>
+
+      <div id="dot-container"><div class="no-dot"></div></div>
+
+    </div>
+  </div>
+
+    <footer id="footer">
+      <div id="footer-inner" class="fl-r">
+        <div id="footer-content" class="pos-rel">
+            <span id="footer-name" class="pos-abs">
+                &copy; Nic Fontaine <span id="year-container"></span>
+            </span>
+            <span id="social-container" class="pos-rel">
+                <i class="fa fa-twitter-square"></i><i class="fa fa-google-plus"></i><i class="fa fa-github"></i><i class="fa fa-instagram"></i><i class="fa fa-linkedin"></i>
+            </span>
+
+            <!--<div id="pagination">
+                <a href="/page2.html" class="next">2</a>
+            </div>-->
+        </div>
+      </div>
+    </footer>
+
+<script>
+  // FIX FOR USERS W/ DISABLED JS
+  document.getElementById('content-container').style.display = "inline-block";
+  document.getElementById('no-js-container').style.display = "none";
+  document.getElementsByTagName('header')[0].style.display = "block";
+  document.getElementsByTagName('footer')[0].style.display = "block";
+  document.getElementById('cmd-container').style.display = "block";
+</script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<!-- <script src="js/main.min.js" async></script> -->
+<script src="js/main.js" async></script>
+
+<!-- Google Analytics-->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-61243164-2','auto');ga('send','pageview');
+</script>
+
+</body>
+
+</html>
