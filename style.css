@@ -4,6 +4,7 @@ html {
   line-height: 1.4;
   /*cursor: none;*/
   /*background: #1F131F;*/
+  /*cursor: url(/images/cursor_keyboard_01.png);*/
 }
 
 html, body {
@@ -45,6 +46,10 @@ figure img {
   width: 650px;
 }
 
+figure video {
+  margin-bottom: 25px;
+}
+
 .fl-l {
   float: left;
   /*margin-bottom: 25px;*/
@@ -70,6 +75,27 @@ figure img {
 
 .pos-rel {
   position: relative;
+}
+
+iframe {
+  border: 1px solid #777;
+}
+
+.resp-iframe-container {
+  overflow: auto;
+  resize: both;
+  width: 500px;
+  margin: 0 auto 25px;
+}
+
+.float-wrap-img-l {
+  float: left;
+  margin-right: 30px;
+}
+
+.float-wrap-img-r {
+  float: right;
+  margin-left: 30px;
 }
 
 /*COLOR SCRUBS*/
@@ -99,14 +125,14 @@ figure img {
 
 /*HEADER BACKGROUND*/
 @keyframes scrub-header-bg {
-  0% {background: hsl(305,37%,22%); border-bottom: 1px solid hsl(305,40%,24%);}
-  12.5% {background: hsl(260,37%,22%); border-bottom: 1px solid hsl(260,40%,24%);}
-  25% {background: hsl(208,37%,22%); border-bottom: 1px solid hsl(208,40%,24%);}
-  37.5% {background: hsl(156,37%,22%); border-bottom: 1px solid hsl(156,40%,24%);}
-  50% {background: hsl(104,37%,22%); border-bottom: 1px solid hsl(104,40%,24%);}
-  62.5% {background: hsl(52,37%,22%); border-bottom: 1px solid hsl(52,40%,24%);}
-  75% {background: hsl(356,37%,22%); border-bottom: 1px solid hsl(356,40%,24%);}
-  100% {background: hsl(305,37%,22%); border-bottom: 1px solid hsl(305,40%,24%);}
+  0% {background: hsl(305,37%,26%); border-bottom: 1px solid hsl(305,40%,28%);}
+  12.5% {background: hsl(260,37%,26%); border-bottom: 1px solid hsl(260,40%,28%);}
+  25% {background: hsl(208,37%,26%); border-bottom: 1px solid hsl(208,40%,28%);}
+  37.5% {background: hsl(156,37%,26%); border-bottom: 1px solid hsl(156,40%,28%);}
+  50% {background: hsl(104,37%,26%); border-bottom: 1px solid hsl(104,40%,28%);}
+  62.5% {background: hsl(52,37%,26%); border-bottom: 1px solid hsl(52,40%,28%);}
+  75% {background: hsl(356,37%,26%); border-bottom: 1px solid hsl(356,40%,28%);}
+  100% {background: hsl(305,37%,26%); border-bottom: 1px solid hsl(305,40%,28%);}
 }
 
 @keyframes move-header {
@@ -642,6 +668,7 @@ hr {
 
 #no-js-container {
   display: block;
+  /*opacity: 0;*/
   /*position: relative;*/
   background: #ccc;
   margin: 15% auto 0;
@@ -650,8 +677,8 @@ hr {
   padding: 50px;
   z-index: 10;
   line-height: 30px;
-  animation: no-js-opacity 1s 1;
-  -webkit-animation: no-js-opacity 1s 1;
+  animation: no-js-opacity 3s 1;
+  -webkit-animation: no-js-opacity 3s 1;
 }
 
 #mobile-pending-container {
@@ -700,7 +727,7 @@ section {
   line-height: 30px;
   width: 80%;
   max-width: 790px;
-  color: #666771;
+  color: #5E5F6B;
   background: #ccc;
 }
 
@@ -750,7 +777,7 @@ section p:last-child {
   /*margin-bottom: 0;*/
 }
 
-section p:last-child::after {
+section article::after {
   /*margin-bottom: 0;*/
   content: '[ flip between slides with < and > arrow keys ]';
   text-align: center;
@@ -759,6 +786,7 @@ section p:last-child::after {
   margin-top: 45px;
   text-transform: uppercase;
   font-size: 13px;
+  /*display: none;*/
 }
 
 
@@ -858,9 +886,28 @@ section p:last-child::after {
   background: rgba(255,255,255,0.3);
 }
 
-p {
+.slide-instructions {
+  text-align: center;
+}
+
+section p {
   margin: 0 0 23px 0;
   width: 650px;
+}
+
+.p-filler {
+  height: 500px;
+}
+
+.article-h-seperator {
+  margin: 28px 0;
+  height: 4px;
+  /*background: #bbb;*/
+  max-width: 30px;
+  opacity: 0.15;
+  animation: scrub-cursor 110s infinite;
+  -webkit-animation: scrub-cursor 110s infinite;
+
 }
 
 .p-sites {
@@ -1040,6 +1087,14 @@ ul li {
   font-size: 15px;
 }
 
+.key-ud {
+  padding: 2px 5px;
+}
+
+.key-lr {
+  padding: 2px 7px;
+}
+
 .section-inner .fa {
   margin-right: 15px;
   color: #aaa;
@@ -1055,7 +1110,7 @@ ul li {
 
 h3 {
   position: relative;
-  color: #666;
+  color: #5C5D5F;
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 17px;
@@ -1102,10 +1157,10 @@ h4 {
   text-shadow: 0 0 15px rgba(0,0,0,1);
 }
 
-#instructions-cli-container {
+/*#instructions-cli-container {
   display: block;
   padding-top: 4px;
-}
+}*/
 
 #instructions-gui-container {
   display: none;

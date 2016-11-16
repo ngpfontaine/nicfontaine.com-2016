@@ -46,18 +46,18 @@
     </div>
   </nav>
 
-  <section id="no-js-container" class="post pos-rel">
-    <p>Welcome to the personal site of Nic Fontaine, it looks like you have Javascript disabled.</p>
+  <div id="no-js-container" class="post pos-rel">
+    <p style="margin-top: 0;">Welcome to the personal site of Nic Fontaine, it looks like you have Javascript disabled.</p>
     <p>I encourage you to enable it and refresh; I promise you have nothing to worry about. I am not gathering any personal info (unless you decide to email me of course).<p>
     <p style="text-align: center; margin-bottom: 0;">Thanks, and enjoy!</p>
-  </section>
+  </div>
 
-  <section id="mobile-pending-container" class="post pos-rel">
+  <div id="mobile-pending-container" class="post pos-rel">
     <h3>Mobile Site</h3>
     <p>I do apologise, but the mobile site is still in development.</p>
     <p>Normally any site I make would be fully responsive, but due to the unique nature and functionality of this project it must be designed in parallel.<p>
     <p>Thanks, and check back soon. In the meantime I encourage you to experience this on a desktop.</p>
-  </section>
+  </div>
 
   <div id="content-container" class="pos-rel fl-r">
     <div id="content-inner">
@@ -77,15 +77,17 @@
               <div id="instructions-cli-container">
               <h3>Basic Instructions</h3>
 
-              <p><i class="fa fa-bolt"></i> Welcome to my unconvential, command line based website</p>
+              <p><i class="fa fa-bolt"></i> Welcome to my unconventional, command line based portfolio</p>
 
               <p><i class="fa fa-bolt"></i> Enter your commands at the <span class="bold">top left</span> and output will appear below</p>
 
-              <p><i class="fa fa-bolt"></i> No need for a mouse - type, and use your <span style="bold">arrow keys</span> for scroll</p>
+              <p><i class="fa fa-bolt"></i> Type commands, then use <span class="bold">arrow keys</span> for scroll <span class="key-code key-ud"><i class="fa fa-chevron-down" style="margin-right: 0;"></i></span> <span class="key-code key-ud"><i class="fa fa-chevron-up" style="margin-right: 0;"></i></span> &amp; slides <span class="key-code key-lr"><i class="fa fa-chevron-left" style="margin-right: 0;"></i></span> <span class="key-code key-lr"><i class="fa fa-chevron-right" style="margin-right: 0;"></i></span></p>
 
               <p><i class="fa fa-bolt"></i> To list all <span class="bold">main navigation</span> sections type <span class="font-code-bracket">&gt;</span><span class="font-code"> LS</span> and hit the <span class="bold">ENTER</span> key<!-- or <span class="font-code-bracket">&gt;</span><span class="font-code"> DIR</span> (for you windows shell users).--></p>
 
-              <p><i class="fa fa-bolt"></i> To bring back this screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span></p>
+              <p><i class="fa fa-bolt"></i> Return here with <span class="font-code-bracket">&gt;</span><span class="font-code"> HOME</span> . Move back with <span class="font-code-bracket">&gt;</span><span class="font-code"> BACK</span> any time</p>
+
+              <!-- <p><i class="fa fa-bolt"></i> Use <span class="font-code-bracket">&gt;</span><span class="font-code"> BACK</span> at any time</p> -->
 
               <p><i class="fa fa-bolt"></i><span class="bold">Have Fun!</span></p>
 
@@ -100,13 +102,13 @@
 
       <section>
           <div class="section-inner">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+              <p class="p-filler"></p>
           </div>
-          <div class="section-fade-bot pos-abs"></div>
       </section>
 
       <section id="scroll-art">
         <div class="scroll-bar"></div>
+        <div class="section-bg pos-abs"><img src="images/article_bg_sandy_c.png" alt="Promo image of Sandy, a character I modeled for Turtle Links"></div>
         <h1 class="menu-main-h1">Art</h1>
         <div class="scroll-arrow-top"></div>
         <div class="scroll-arrow-bot"></div>
@@ -114,10 +116,84 @@
         <div class="scroll-bar-move pos-abs"></div>
           <div class="section-inner">
             <div class="padding-inner">
+
+              <article>
+                <figure>
+                  <h3>Bunker Blast - Game Art</h3>
+                  <img src="images/art_bunker_blast_01_c.png" alt="Promo game art for Bunker Blast">
+                  <figcaption>
+                    <p>
+                      <!-- <div class="fl-l" style="margin-right: 30px; overflow: auto;"><iframe src="https://player.vimeo.com/video/162212564?title=0&byline=0&portrait=0" width="290" height="510" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> -->
+                      A contact project for The Littlest Golfer, Bunker Blast incorporates the original characters Sandy, Putter, Steve, and Stinky into a 2D brick-breaker/Peggle style Unity game. I created almost all of the art assets, sprite sheets, and character animation, took care of some level design, and developed the promo materials and logo. The game tours references to world famous courses in its four chapters. Honestly, for a kids game it's quite challenging, and the final level is pretty ridiculous.
+                    </p>
+                    <p>
+                      <i class="fa fa-bolt"></i> Watch a sample on Vimeo with <span class="font-code-bracket">&gt;</span><span class="font-code"> go bunkerblast</span>
+                    </p>
+                    <!-- <p>
+                      To try out a sample, use  <span class="font-code-bracket">&gt;</span><span class="font-code"> go bunkerblast</span>
+                    </p> -->
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Turtle Links 3D Models</h3>
+                  <img src="images/art_modeling_tlg_01_c.png">
+                  <figcaption>
+                    <p>
+                      Working off of the established illustrations for Sandy and Putter, and developing the look for a new character - Steve the Weasel, I sculpted and painted in Zbrush, retopo'd, and imported, rigged, and shaded in Modo for animation. I also modeled a few props for the show as well as toy designs including a few stylized golf carts, course shop, and more.
+                    </p>
+                    <p>
+                      Character porportions in the lower age demographic have serious limitations in animation which made for some fun shots, like a turtle adjusting his hat (if their arms were long enough to touch the tops of their heads they would look truly absurd haha).
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Graphite Concept Sketches</h3>
+                  <img src="images/art_graphite_concepts_01_c.jpg">
+                  <figcaption>
+                    <p>
+                      From tattoo ideas to game concepts, I always enjoy getting ideas out on paper in my sketchbook first. These are a few recent pages.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Crywolf Text Animation</h3>
+                  <video autoplay loop>
+                    <source src="/images/crywolf_runaway_03.webm" type="video/webm" />
+                    Your browser does not support the video tag
+                  </video>
+                  <figcaption>
+                    <p>
+                      A fun project for a music video of a good friend of mine - Justin Phillips.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Turtle Links Logo</h3>
+                  <img src="images/art_tlg_logo_01_c.png">
+                  <figcaption>
+                    <p>
+                      I created the vector logo for "Turtle Links" the 3D pilot for The Littlest Golfer, Inc. I made sure to incorporate the flag &amp; hole as well as a flying ball as images while I kept the typography large, blocky, and fun - perfect for the 4-10 age demographic. It's simple, but I love the vintage yet not dated feel to the entire concept.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
               <article>
                 <figure>
                   <h3>3MI Design - Branding</h3>
-                  <img src="images/art_3mi_02.jpg">
+                  <img src="images/art_3mi_02_c.png">
                   <figcaption>
                     <p>
                       I created the visual style and assets for a media group under which I and two other colleagues were working on various projects. 3MI (in the cyrillic alphabet) in Ukrainian means 'media'. The feel of the website is very unique and fresh and I feel accomplishes the objective of translating the unique variety of services offered. We're all workind on seperate projects/employment but I'm still proud of the work accomplished and the entire visual package.
@@ -128,20 +204,8 @@
 
               <article>
                 <figure>
-                  <h3>Red Bike - Branding</h3>
-                  <img src="images/art_red_bike_01.jpg">
-                  <figcaption>
-                    <p>
-                      An exercise in rebranding a bike-delivery sandwich shop at which i worked back in college. As intended I think it turned out perfectly overly professional for a local deli, and certainly a step up from the original bitmapped Power Point logo.
-                    </p>
-                  </figcaption>
-                </figure>
-              </article>
-
-              <article>
-                <figure>
                   <h3>Don't Dread On Me - Concept Painting</h3>
-                  <img src="images/art_ddom_01.jpg">
+                  <img src="images/art_ddom_01_c.jpg">
                   <figcaption>
                     <p>
                       Visual development for a game a friend and I were dreaming up one afternoon. "A runaway dread tries to escape the perils of a a degenerate dead-head's flat, along the way discovering his true potential as he embraces the fetid squalor from which he himself was born..." Or you know, a  grungy 2D infinite runner.
@@ -152,15 +216,12 @@
 
               <article>
                 <figure>
-                  <h3>Bunker Blast - Game Art</h3>
-                  <img src="images/art_bunker_blast_01_c.jpg" alt="Promo game art for Bunker Blast">
+                  <h3>Mulligan Illustration</h3>
+                  <img src="images/art_mulligan_01_c.png">
                   <figcaption>
                     <p>
-                      A freelance project for The Littlest Golfer, Bunker Blast incorporates the original characters Sandy, Putter, Steve, and Stinky into a 2D brick-breaker/Peggle style Unity game. I created almost all of the art assets, sprite sheets, and character animation, took care of some level design, and developed the promo materials and logo. The game tours references to world famous courses in its four chapters. Honestly, for a kids game it's quite challenging, and the final level is pretty ridiculous.
+                      Vector illustration of a character from "Turtle Links", Mulligan - the old, wise scottish terrier.
                     </p>
-                    <!-- <p>
-                      To try out a sample, use  <span class="font-code-bracket">&gt;</span><span class="font-code"> go bunkerblast</span>
-                    </p> -->
                   </figcaption>
                 </figure>
               </article>
@@ -179,15 +240,70 @@
 
               <article>
                 <figure>
-                  <h3>Mulligan</h3>
-                  <!-- <img src="images/art_bunker_blast_01_c.jpg"> -->
+                  <h3>Logo Exercises</h3>
+                  <img src="images/art_logo_exercises_01.jpg" alt="2 logo designs, one - green universe swirl, and two - red map pin with text banner in front">
+                  <!-- <figcaption>
+                  </figcaption> -->
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Turtle Links Premiere Poster</h3>
+                  <p style="overflow: auto;">
+                  <img class="float-wrap-img-l" src="images/art_turtle_links_poster_01_c.png" alt="promo poster for the Turtle Links premiere" style="width: auto;">
+                  Promotional poster for the premiere of "Turtle Links" at the PGA Merchandise show in Orlando. From left to right characters Mulligan, Sandy, Putter, Steve, and Stinky pose at their home course in front of the old clubhouse.
+                  </p>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Turtle Links</h3>
+                  <a target="_blank" href="https://www.youtube.com/watch?v=ojJFZF8tUSM"><img src="images/art_turtle_links_vid_c.png" alt="turtle links video image link"></a>
                   <figcaption>
                     <p>
-                      [content to come]
+                      A 3D animated pilot on which I worked for The Littlest Golfer, Inc. From storyboarding to character animation to compositing I in a team of 3 worked to bring Putter, Sandy, Steve, Stinky, and Mulligan to life in a fun and educational golf-centered story. After completion we produced "Bunker Blast" a 2D brick-breaker style Unity game for iOS and Android.
+                    </p>
+                    <p class="p-sites">
+                      <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go turtlelinks</span>
                     </p>
                   </figcaption>
                 </figure>
               </article>
+
+              <article>
+                <figure>
+                  <h3>Red Bike - Branding</h3>
+                  <img src="images/art_red_bike_01.jpg" alt="classic, vector style logo and business card, 'red bike' text with bike wheel spoke">
+                  <figcaption>
+                    <p>
+                      An exercise in rebranding a bike-delivery sandwich shop at which i worked back in college. As intended I think it turned out perfectly overly professional for a local deli, and certainly a step up from the original bitmapped Power Point logo.
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Photoshop Sketch</h3>
+                  <img src="images/art_minion_01_c.png" alt="black and white photoshop of a minion with 'im crazy about you text'">
+                  <!-- <figcaption>
+                  </figcaption> -->
+                </figure>
+              </article>
+
+            <!-- <article>
+              <figure>
+                <h3>Mulligan</h3>
+                <img src="images/art_bunker_blast_01_c.jpg">
+                <figcaption>
+                  <p>
+                    [content to come]
+                  </p>
+                </figcaption>
+              </figure>
+            </article> -->
 
             </div>
           </div>
@@ -220,7 +336,7 @@
             <i class="fa fa-crop"></i> <span class="bold">Adobe</span>
             <p>Photoshop, Illustrator, After Effects, Premeire</p>
             <i class="fa fa-linux"></i> <span class="bold">GNU Linux - Desktop and Server</span>
-            <p>Arch and Ubuntu based systems, shell, file transfer, ssl integration, https redirection, system maintenance, permissions</p>
+            <p>Arch and Ubuntu based systems, shell, file transfer, ssl integration, iptable firewalls, https redirection, system maintenance, user permissions</p>
             <i class="fa fa-wordpress"></i> <span class="bold">Wordpress</span>
             <p>Codex, mySql DB, child theme customization, load time and pagespeed analysis</p>
             <i class="fa fa-terminal"></i> <span class="bold">Chrome & Firefox Dev Tools</span>
@@ -261,7 +377,8 @@
               <article>
                 <figure>
                   <h3>Bunker Blast</h3>
-                  <img src="images/games_bunker_blast_01.jpg">
+                  <!-- <img src="images/games_bunker_blast_01.jpg"> -->
+                  <div class="fl-l"><iframe src="https://player.vimeo.com/video/162212564?title=0&byline=0&portrait=0" width="290" height="510" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                   <figcaption></figcaption>
                 </figure>
               </article>
@@ -286,22 +403,22 @@
 
               <article>
                 <figure>
-                  <h3>JQuery Form Validation</h3>
+                  <h3>GFV - JQuery Form Validation</h3>
+                  <p>
+                    Unhappy with form validation on our landing pages at Element-360 I created an extension with JQuery, exclusively to extend the capabilities of Gravity Forms. In watching behaviour analysis recordings I found a large number of people clicking the CTA to immediately receive information. This results in a page reload with error messages appended to the required fields - not an optimal user experience.
+                  </p>
                   <div class="cont-img-inl">
                     <img class="fl-l img-inl" src="images/web_form_validation_gif_02.gif" alt="gravity forms standard page refresh validation"><img class="fl-r img-inl" src="images/web_form_validation_gif_01.gif" alt="My custom on page validation for gravity forms">
                   </div>
                   <figcaption>
                   <p>
-                    Unhappy with form validation on our landing pages at Element-360 I created an extension with JQuery, exclusively to extend the capabilities of Gravity Forms. In watching behaviour analysis recordings I found a large number of people clicking the CTA to immediately receive information. This results in a page reload with error messages appended to the required fields - not an optimal user experience.
-                  </p>
-                  <p>
                     My goals were:
                     <ul>
                       <li>Live validation/disable button send until form fulfilled</li>
-                      <li>Blank required field UI change on button click</li>
+                      <li>UI change from button click - of blank required fields</li>
                       <li>Validation check (logic and visual) on field blur</li>
                       <li>Email regex validation</li>
-                      <li>Safisfying, straightforward UX (people have very little tolerance on landing pages)</li>
+                      <li>Simple, safisfying UX (people have a mote of tolerance on landing pages)</li>
                     </ul>
                   </p>
                   <p>
@@ -316,11 +433,106 @@
 
               <article>
                 <figure>
-                  <h3>Google Analytics</h3>
-                  <img src="images/cert_ga_201706.jpg">
+                  <h3>ianhaneylopez.com</h3>
+                  <img src="images/web_site_ianhaneylopez_01_c.png" alt="Screenshots of ianhaneylopez.com, Wordpress site created for a professor of law at Berkeley.">
+                  <figcaption>
+                    <p>
+                      I won't try to paraphrase Ian's (a chaired law professor at Berkeley) ideas and insights as I feel that is better left to him, but for the technical info - I designed a custom, simple, and clean Wordpress theme built for regular additions of writings, interviews, and events &amp; publications.
+                    </p>
+                    <p>
+                      I feel the site does a good job of cleanly hosting his work in a unique and memorable fashion while neither falling short and coming off as a basic blog theme or pushing too much design for the collegiate/political world.
+                    </p>
+                    <p class="p-sites">
+                      <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go ihl</span>
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Responsive, Animated Banner Button</h3>
+                  <div class="resp-iframe-container">
+                    <iframe src="web-banner-button.html" width="100%" height="390"></iframe>
+                  </div>
+                  <figcaption>
+                    <p>
+                      A unique JSFiddle exercise to create a fun, responsive banner-style button with CSS hover animation, while maintaining the vertical position of the text below. Hover the button and expand the container window to test (note: webkit doesn't let you resize down...?).
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>silvermuse.net</h3>
+                  <img src="images/web_site_silvermuse_01_c.png" alt="Screenshots of silvermuse.net, a website I created to display the work and services of a close friend and colleague Claudette Silver">
+                  <figcaption>
+                    <p>
+                      The professional website of a close friend and colleague Claudette Silver - a custom Wordpress theme with a stripped down, minimal, yet still stylish and fresh feel.
+                    </p>
+                    <p>
+                      Claudette has strong opinions on what she does and does not like, and luckily for me her ideas are always fun and unconvential. Her reaction when I asked if she wanted a 'hamburger' menu was a priceless progression of confusion > research > disguist.
+                    </p>
+                    <p>
+                      She also loved my idea for an "anti-slideshow" atop the homepage. It's great to have a client who can appreciate and complain with the best of 'em.
+                    </p>
+                    <p class="p-sites">
+                      <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go silvermuse</span>
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Adwords Display Ads</h3>
+                  <img src="images/web_ads_adwords_02_c.png" alt="a collage of image ads for the google display network and Zillow">
                   <figcaption>
                   <p>
-                    I have extensive experience with event tracking, cross domain tracking, and analyzing data: especially behaviour flow and technology dimensions. In addition - Google Tag Manager, Google Adwords especially with image and HTML5 ad creation, Google Material Design specs, and Page Speed Analysis.
+                    Whew, look at that compression nightmare of a collage.. I've made hundreds of ads for many diverse ad campaigns for the GDN as well as Zillow. Headlines and CTA's are chosen from text ad PPC performance in Adwords, and coupled with unique branding styles from each individual client.
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>3midesign.com</h3>
+                  <img src="images/web_site_3mi_01_c.png" alt="Screenshots of 3midesign.com, a design and development collective of which I was a part - including designing the website in full">
+                  <figcaption>
+                    <p>
+                      I created this portfolio website as a collective showcase of the work of two colleagues and myself for various freelance design and development projects we had taken on. I hadn't been working on much web design at the time so it was fun to develop with no restrictions and have an excuse to try and learn some new things along the way.
+                    </p>
+                    <p>
+                      I'm still very proud of the site even though we are no longer taking on clients, and feel that it offers a very one of a kind experience akin to an experimental yet polished project.
+                    </p>
+                    <p class="p-sites">
+                      <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go 3midesign</span>
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Google Analytics</h3>
+                  <img src="images/web_cert_ga_201706_c.jpg">
+                  <figcaption>
+                  <p>
+                    I have extensive experience with event tracking, cross domain tracking, and analyzing data: especially behaviour flow and technology dimensions. In addition - Google Tag Manager, Search Console, Google Adwords especially with image and HTML5 ad creation, Google Material Design specs, and Page Speed Analysis.
+                  </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Email Development</h3>
+                  <img src="images/web_email_the_grove_01_c.png">
+                  <figcaption>
+                  <p>
+                    I've designed and coded fully responsive and modular html email newsletters within Campaign Monitor and Mailchimp that saw triple digit increases in click-through-rates compared to previous agencies' deployments. It's truly a dark art, but I've certainly learned a great deal fighting the contraints of "modern" email clients.
                   </p>
                   </figcaption>
                 </figure>
@@ -338,61 +550,31 @@
                     But really, I had a few objectives in making this site. I love using a keyboard; and have minimized reliance on mouse input for navigation almost as much as possible within browsers. So one goal was to give the user (1) a site they could navigate without moving their hands from the keyboard, while (2) challenging web-navigation conventions to give said user a unique and memorable experience.
                   </p>
                   <p>
-                    As a GNU Linux user, I naturally wanted to give unix-experienced users a familiar feel while introducing to the unaccustomed a small window into terminal commands and key navigation. As a front end web-developer, it was important to try something experimental; to run as far away from fullscreen img + headline + call-to-action as possible. Given, the mobile site is another problem left to tackle, I enjoy the UX I've created.
+                    As a GNU Linux believer, I naturally wanted to give unix-experienced users a familiar feel while introducing to the unaccustomed a small window into terminal commands and key navigation. As a front end web-developer, it was important to try something experimental; to run as far away from fullscreen img + headline + call-to-action as possible. Given, the mobile site is another problem left to tackle, I enjoy the UX I've created.
                   </p>
                   <p>
-                   Code wise - after starting to quickly prototype everything with JQuery, all events and DOM updates were swapped out with Vanilla JS as a challenge, learning experience, and optimization technique. Velocity.js is used for &lt;section&gt; movement and fade invoked with command calls, while other visual changes (like site colour shift) are mostly CSS animations.
-                   </p>
+                    Code wise - after starting to quickly prototype everything with JQuery, all events and DOM updates were swapped out with Vanilla JS as a challenge, learning experience, and optimization technique. Velocity.js is used for &lt;section&gt; movement and fade invoked with command calls, while other visual changes (like site colour shift) are mostly CSS animations.
+                  </p>
+                  <p>
+                    Many of the content sections are repeated templates, so I have a container at the bottom of the &lt;body&gt; from which to copy with cloneNode and insert. The DOM is semantically organized into &lt;sections&gt; for each site section, and &lt;articles&gt; within - that act as figure/figcaption slides. Each command inserts a hash into the url to enable copying/bookmarking that particular section, yet I have preserved the history state - so the browser back button will leave the site regardless of hash. Additionally, commands are pushed into an array to enable the <span class="font-code-bracket">&gt;</span><span class="font-code"> BACK</span> function. Keyboard back is disabled to prevent accidental browser back triggers - you can see that holding down the back button will not continuously delete command letters.
+                  </p>
+                  <p>
+                    As this is a single-page site with many unique groupings of content, I've tried out segmenting each into &lt;sections&gt; - each with an &lt;h1&gt;. I'm curious how this will be crawled SEO-wise.
+                  </p>
                  </figcaption>
-                </figure>
+               </figure>
               </article>
 
-              <article>
-                <figure>
-                  <h3>Website Development</h3>
-                  <figcaption>
-                  <p>
-                    To see a list of the full sites I've designed and developed check out the <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span> section
-                  </p>
-                  </figcaption>
-                </figure>
-              </article>
-
-              <article>
-                <figure>
-                  <h3>Adwords Display Ads</h3>
-                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
-                  <figcaption>
-                  <p>
-                    [content to come]
-                  </p>
-                  </figcaption>
-                </figure>
-              </article>
-
-              <article>
-                <figure>
-                  <h3>Email Development</h3>
-                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
-                  <figcaption>
-                  <p>
-                    [content to come]
-                  </p>
-                  </figcaption>
-                </figure>
-              </article>
-
-              <article>
+              <!-- <article>
                 <figure>
                   <h3>A/B Testing</h3>
-                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
                   <figcaption>
                   <p>
                     [content to come]
                   </p>
                   </figcaption>
                 </figure>
-              </article>
+              </article> -->
 
             </div>
           </div>
@@ -411,7 +593,8 @@
           <div class="scroll-bar-move pos-abs"></div>
           <div class="section-inner">
             <div class="padding-inner">
-            <p>
+            <p style="overflow: auto; margin: 0">
+              <div class="float-wrap-img-r"><img src="/images/nf_headshot_01_c.png" style="width: 250px;"></div>
               <div class="p-first">I</div><span>'m an Digital Artist and Developer currently living in Asheville, NC. I specialize in imaginative graphic branding and illustration, unique but functionally tested front-end web and UI/UX design, and 3D modeling and animation.</span>
             </p>
 
@@ -429,11 +612,11 @@
 
             <h4>Personal</h4>
             <p>
-              I'm a North Florida migrant to Asheville, North Carolina for education at the University of North Carolina at Asheville, and a graduate of the New Media program specializing in 3D Animator under the tutelage esteemed industry professionals and trusted friends such as Christopher Oakley and Chris McKee.
+              I'm a North Florida migrant to Asheville, North Carolina for education at the University of North Carolina at Asheville, and a graduate of the New Media program specializing in 3D Animation under the tutelage esteemed industry professionals and trusted friends such as Christopher Oakley and Chris McKee.
             <p>
 
             <p>
-              My foundation is clean, but not stifled graphic design, my training is in classic 3D animation and modeling, and my most recent professionnal experience (NOTE) supplements with an extensive analysis and implementation of user-friendly, scalable, and to the point web-design and development.
+              My foundation is clean, but not stifled graphic design, my training is in classic 3D animation and modeling, and my most recent professionnal experience supplements with an extensive analysis and implementation of user-friendly, scalable, and to the point web-design and development.
             </p>
 
             <h4>Website Abstract (preaching, venting, perchance insightful?)</h4>
@@ -460,31 +643,6 @@
         <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
       </section>
 
-      <section id="scroll-contact">
-        <div class="scroll-bar"></div>
-        <h1 class="menu-main-h1">Contact</h1>
-          <div class="scroll-arrow-top"></div>
-          <div class="scroll-arrow-bot"></div>
-          <div class="section-fade-top pos-abs"></div>
-          <div class="scroll-bar-move pos-abs"></div>
-          <div class="section-inner">
-            <div class="padding-inner">
-              <h3>Email</h3>
-                <p>- ngpfontaine@gmail.com</p>
-              <h3>Twitter</h3>
-                <p>@arcovelo</p>
-              <h3>Linkedin</h3>
-                <p>www.linkedin.com/in/nic-fontaine-67304062</p>
-              <h3>Location</h3>
-                <p>Asheville, NC</p>
-              <h3>Phone</h3>
-                <p>850.766.6705</p>
-            </div>
-          </div>
-          <div class="section-fade-bot pos-abs pos-abs"></div>
-        <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
-      </section>
-
       <section id="scroll-resume">
         <div class="scroll-bar"></div>
         <h1 class="menu-main-h1">Resume</h1>
@@ -494,7 +652,22 @@
           <div class="scroll-bar-move pos-abs"></div>
           <div class="section-inner">
             <div class="padding-inner">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+              <article>
+                <h3>Page 01</h3>
+                <img src="images/nf_resume_img_20160407_p01.jpg" alt="Resume of nic fontaine page 1" />
+              </article>
+              <article>
+                <h3>Page 02</h3>
+                <img src="images/nf_resume_img_20160407_p02.jpg" alt="Resume of nic fontaine page 2" />
+              </article>
+              <article>
+                <h3>Page 03</h3>
+                <img src="images/nf_resume_img_20160407_p03.jpg" alt="Resume of nic fontaine page 3" />
+              </article>
+              <article>
+                <h3>Page 04</h3>
+                <img src="images/nf_resume_img_20160407_p04.jpg" alt="Resume of nic fontaine page 4" />
+              </article>
             </div>
           </div>
           <div class="section-no-dots"></div>
@@ -502,7 +675,7 @@
           <div class="instructions-scroll pos-abs">[ scroll using &#8593; &amp; &#8595; arrows <span style="font-style: normal"> or HOME and END ]</span></div>
       </section>
 
-      <section id="scroll-sites">
+      <!-- <section id="scroll-sites">
         <div class="scroll-bar"></div>
         <h1 class="menu-main-h1">Sites</h1>
         <div class="scroll-arrow-top"></div>
@@ -596,7 +769,7 @@
         <div class="section-fade-bot pos-abs"></div>
         <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
       </section>
-
+ -->
       <section id="scroll-curse">
         <div class="scroll-bar"></div>
         <h5>Wow</h5>
@@ -629,54 +802,35 @@
               <p><i class="fa fa-bolt"></i>To bring up the original welcome screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span></p>
               <h3>Menu Items</h3>
               <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> ABOUT</span>
-              </p>
-              <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> SKILLS</span>
-              </p>
-              <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span>
-              </p>
-              <!-- <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>
-              </p> -->
-              <p class="ls-p">
                 <span class="font-code-bracket">&gt;</span><span class="font-code"> WEB</span>
               </p>
               <p class="ls-p">
                 <span class="font-code-bracket">&gt;</span><span class="font-code"> ART</span>
               </p>
               <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> CONTACT</span>
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ABOUT</span>
               </p>
-              <!-- <p>
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> RESUME</span>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SKILLS</span>
+              </p>
+              <!-- <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span>
               </p> -->
-              <h3>External Links</h3>
+              <!-- <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>
+              </p> -->
+              <div class="article-h-seperator"></div>
               <p>
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span>
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> LINKS</span>
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> RESUME</span>
               </p>
             </div>
           </div>
           <div class="section-no-dots"></div>
           <div class="section-fade-bot pos-abs"></div>
         <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
-      </section>
-
-      <section id="scroll-back">
-        <div class="scroll-bar"></div>
-        <h5>Back</h5>
-          <div class="scroll-arrow-top"></div>
-          <div class="scroll-arrow-bot"></div>
-          <div class="section-fade-top pos-abs"></div>
-          <div class="scroll-bar-move pos-abs"></div>
-          <div class="section-inner">
-            <div class="padding-inner">
-              <p>To where?</p>
-            </div>
-          </div>
-          <div class="section-no-dots"></div>
-          <div class="section-fade-bot pos-abs"></div>
       </section>
 
       <section id="scroll-confused">
@@ -706,39 +860,28 @@
           <div class="section-inner">
             <div class="padding-inner">
               <h3>Menu Items</h3>
+              <!-- <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>&nbsp; &nbsp; - game design, art, and development
+              </p> -->
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> WEB</span>&nbsp; &nbsp; - web design/dev, active sites, ad campaigns, CRO, certification, etc.
+              </p>
+              <p class="ls-p">
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> ART</span>&nbsp; &nbsp; - graphic design, painting &amp; drawing, and 3d modeling &amp; animation
+              </p>
               <p class="ls-p">
                 <span class="font-code-bracket">&gt;</span><span class="font-code"> ABOUT</span>&nbsp; &nbsp; - my education, experience, interests, and this site
               </p>
               <p class="ls-p">
                 <span class="font-code-bracket">&gt;</span><span class="font-code"> SKILLS</span>&nbsp; &nbsp; - professional and freetime expertise and endeavours
               </p>
+              <div class="article-h-seperator"></div>
               <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> SITES</span>&nbsp; &nbsp; - showcase of websites I've built
+                <span class="font-code-bracket">&gt;</span><span class="font-code"> LINKS</span>&nbsp; &nbsp; - contact &amp; social email, linkedin, twitter, github, instagram
               </p>
-              <!-- <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> GAMES</span>&nbsp; &nbsp; - game design, art, and development
-              </p> -->
-              <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> WEB</span>&nbsp; &nbsp; - web design, ad campaigns, CRO, certification, etc.
-              </p>
-              <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> ART</span>&nbsp; &nbsp; - 2d illustration, graphite drawing, and 3d modeling and animation
-              </p>
-              <p class="ls-p">
-                <span class="font-code-bracket">&gt;</span><span class="font-code"> CONTACT</span>&nbsp; &nbsp; - direct contact, social media handles, etc.
-              </p>
-              <!-- <p>
+              <p>
                 <span class="font-code-bracket">&gt;</span><span class="font-code"> RESUME</span>&nbsp; &nbsp; - hosted pdf of my professional resume
-              </p> -->
-              <p>
-                <i class="fa fa-bolt"></i> To bring up the original welcome screen enter <span class="font-code-bracket">&gt;</span><span class="font-code"> home</span>
               </p>
-              <h3>External Links</h3>
-              <p>To bring up external links, like social media handles, combine "go" with the location
-              <p>
-                Examples:
-              </p>
-              <p><span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span></p>
             </div>
           </div>
           <div class="section-no-dots"></div>
@@ -746,21 +889,49 @@
         <div class="instructions-scroll pos-abs">[ scroll using <i class="fa fa-arrow-up"></i> &amp; <i class="fa fa-arrow-down"></i> arrows, flip through slides with <i class="fa fa-arrow-left"></i> &amp; <i class="fa fa-arrow-right"></i></div>
       </section>
 
-      <section>
+      <section id="scroll-links">
+        <div class="scroll-bar"></div>
+        <h1 class="menu-main-h1">Links</h1>
+          <div class="scroll-arrow-top"></div>
+          <div class="scroll-arrow-bot"></div>
+          <div class="section-fade-top pos-abs"></div>
+          <div class="scroll-bar-move pos-abs"></div>
           <div class="section-inner">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+            <div class="padding-inner">
+              <h3>External Links</h3>
+              <p>To bring up external links, like social media handles, combine "go" with the location
+              <p class="bold">
+                Examples:
+              </p>
+              <p><span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go github</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go vimeo</span></p>
+            </div>
           </div>
+          <div class="section-no-dots"></div>
           <div class="section-fade-bot pos-abs"></div>
       </section>
 
       <section>
           <div class="section-inner">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est. Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo.</p>
+              <p class="p-filler"></p>
           </div>
-          <div class="section-fade-bot pos-abs"></div>
       </section>
 
-      <div id="dot-container"><div class="no-dot"></div></div>
+      <section>
+          <div class="section-inner">
+              <p class="p-filler">ruafonftitenaufylpwyfulpqwuyf</p>
+          </div>
+      </section>
+
+
+      <div id="template-container">
+
+        <div id="slide-instructions-container">
+          <div class="slide-instructions"> flip between slides with < and > arrow keys </div>
+        </div>
+
+        <div id="dot-container"><div class="no-dot"></div></div>
+
+      </div>
 
     </div>
   </div>
@@ -772,12 +943,8 @@
                 &copy; Nic Fontaine <span id="year-container"></span>
             </span>
             <span id="social-container" class="pos-rel">
-                <i class="fa fa-twitter-square"></i><i class="fa fa-google-plus"></i><i class="fa fa-github"></i><i class="fa fa-instagram"></i><i class="fa fa-linkedin"></i>
+                <i class="fa fa-vimeo"></i><i class="fa fa-twitter-square"></i><i class="fa fa-google-plus"></i><i class="fa fa-github"></i><i class="fa fa-instagram"></i><i class="fa fa-linkedin"></i>
             </span>
-
-            <!--<div id="pagination">
-                <a href="/page2.html" class="next">2</a>
-            </div>-->
         </div>
       </div>
     </footer>
@@ -794,7 +961,7 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 <!-- <script src="js/main.min.js" async></script> -->
-<script src="js/main.js" async></script>
+<script src="js/main.min.js" async></script>
 
 <!-- Google Analytics-->
 <script>

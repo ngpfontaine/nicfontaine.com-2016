@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+  <title>Designer, Developer, 2D & 3D Artist - Nic Fontaine</title>
+  <meta name="description" content="Graphic and User Experience Design, Web Development, Animation, Hardware Tinkering, Freelance - Currently In Asheville, NC">
+  <meta content="text/html" charset="utf-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://nicfontaine.com">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+    box-sizing: border-box;
+  }
+  #container {
+    background-color: #fff;
+    left: 30px;
+    right: 30px;
+    /*max-width: 400px;*/
+    position: absolute;
+    box-sizing: border-box;
+    min-width: 105px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    margin: 25px auto;
+  }
+  .text-body {
+    padding: 30px;
+    font-family: helvetica, arial;
+    font-weight: normal;
+    font-size: 13px;
+    color: #999;
+  }
+  #banner-container {
+    margin: 0 -15px;
+    position: relative;
+    display: block;
+    min-width: 95px;
+    vertical-align: top;
+  }
+  #banner-container:hover {
+    -webkit-animation: bannerAnim 0.4s infinite;
+    animation: bannerAnim 0.4s infinite;
+  }
+  @-webkit-keyframes bannerAnim {
+    0% { margin-top: 0; }
+    50% { margin-top: -3px; margin-bottom: 3px; }
+    100% { margin-top: 0; }
+  }
+  @keyframes bannerAnim {
+    0% { margin-top: 0; }
+    50% { margin-top: -3px; margin-bottom: 3px; }
+    100% { margin-top: 0; }
+  }
+  #banner-bg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #4b69a3;
+    background: -webkit-linear-gradient(left,#314873,#314873,#4b69a3,#4b69a3);
+    box-shadow: 0 3px 12px -2px rgba(0,0,0,0.4);
+  }
+  #triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid #6088D6;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: -5px;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  #block-1 {
+    background-color: #5f86d3;
+    background: -webkit-linear-gradient(left,#5476B8,#5476B8,#6088D6);
+    display: inline-block;
+    margin: 0;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    vertical-align: top;
+    font-size: 17px;
+    z-index: 2;
+    font-family: helvetica, arial;
+    text-align: right;
+    width: 54%;
+    font-style: italic;
+    font-weight: bold;
+  }
+  #triangle-small-1 {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #3e5684;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: -2px 0 0 1px;
+    padding: 0;
+    position: absolute;
+  }
+  #triangle-small-2 {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #2a3b5b;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    padding: 0;
+    right: 0;
+    margin: -2px 1px 0 0;
+    position: absolute;
+  }
+  #fake-link {
+    cursor: pointer;
+  }
+
+</style>
+
+<script>
+  document.addEventListener('click', function() {
+    parent.focus();
+    console.log('focus parent, out of iframe');
+  });
+</script>
+
+</head>
+
+<div id="container">
+  <div class="text-body">Lorem ipsum dolor sit amet, odio sed massa ligula ante pede etiam. Nunc tortor auctor hendrerit odio, odio volutpat habitant condimentum suspendisse maecenas donec, vel augue.
+  </div>
+  <div id="banner-container">
+      <div id="fake-link">
+          <div id="banner-bg"><div id="block-1">Hover Me!</div><div id="triangle"></div><div id="triangle-small-1"></div><div id="triangle-small-2"></div></div>
+  </div>
+  </div>
+  <div class="text-body">Lorem ipsum dolor sit amet, odio sed massa ligula ante pede etiam. Nunc tortor auctor hendrerit odio, odio volutpat habitant condimentum suspendisse maecenas donec, vel augue.
+  </div>
+</div>
