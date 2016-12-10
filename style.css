@@ -136,9 +136,9 @@ iframe {
 }
 
 @keyframes move-header {
-  0% { top: -43px; }
-  70% { top: 0; }
-  100% { top: 0; }
+  0% { transform: translateY(-43px); }
+  70% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
 
 header {
@@ -151,6 +151,8 @@ header {
   background: #4C2349;
   animation: move-header 3s 1;
   -webkit-animation: move-header 3s 1;
+  transform: translateY(0);
+  animation-fill-mode: forwards;
 }
 
 #cmd-outer, #cmd-list-container, footer {
@@ -395,7 +397,7 @@ h3::before {
 
 /**/
 #cmd {
-  font-family: courier;
+  font-family: courier, 'courier new', monospace;
   font-size: 25px;
   /*background: black;*/
   color: #21f838;
