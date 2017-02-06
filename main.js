@@ -768,6 +768,13 @@ function loadWelcome() {
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
+          else if (cmdInput === 'go start') {
+            window.open('https://github.com/ngpfontaine/start', '_blank');
+            cmdListUpdate += "> " + cmdInput + "<br><br>";
+            cmdListDom.innerHTML = cmdListUpdate;
+            cmdClear();
+            console.log('GO START');
+          }
 
         }
         // ERROR COMMAND

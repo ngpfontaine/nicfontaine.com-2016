@@ -1,7 +1,7 @@
 <!doctype html>
 <html onclick="cliInputFocus();">
 <head>
-  <title>Designer, Developer, 2D & 3D Artist - Nic Fontaine</title>
+  <title>Designer, Developer, 2D &amp; 3D Artist - Nic Fontaine</title>
   <meta name="description" content="Graphic and User Experience Design, Web Development, Animation, Hardware Tinkering, Freelance - Currently In San Francisco">
   <meta content="text/html" charset="utf-8" http-equiv="Content-Type" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -322,40 +322,50 @@
         <div class="scroll-bar-move pos-abs"></div>
           <div class="section-inner">
             <div class="padding-inner">
+
             <h3>Fluency</h3>
+
             <i class="fa fa-html5"></i> <span class="bold">HTML5</span>
-            <p>Latest standards, semantic markup, forms, clean, responsive code layout, email coding</p>
+            <p>semantic markup, form input &amp; validation, responsive code layout, email coding</p>
             <i class="fa fa-css3"></i> <span class="bold">CSS3</span>
-            <p>Media queries, animations, flexbox, repaint/reflow analysis</p>
+            <p>Device agnostic media query support, smooth animation, flexbox, repaint/reflow analysis</p>
             <i class="fa fa-rocket"></i> <span class="bold">Javascript</span>
-            <p>Vanilla JS, JQuery, Phaser</p>
+            <p>Memory management, scope, cross-browser dom manipulation. Vanilla expertise, Jquery, JSON, Phaser familiarity</p>
             <i class="fa fa-code"></i> <span class="bold">PHP</span>
-            <p>Wordpress theme building</p>
+            <p>POST &amp; GET requests, mail, cookies, wordpress theming</p>
+            <i class="fa fa-icon-exclamation"></i> <span class="bold">Bash</span>
+            <p>Automation, file management, server scripting</p>
 
             <h3>Technology/Software</h3>
-            <i class="fa fa-crop"></i> <span class="bold">Adobe</span>
-            <p>Photoshop, Illustrator, After Effects, Premeire</p>
+
+            <i class="fa fa-crop"></i> <span class="bold">Design</span>
+            <p>Photoshop/Gimp, Illustrator/Inkscape, After Effects, Premeire,  Experience Design, InvisionApp</p>
             <i class="fa fa-linux"></i> <span class="bold">GNU Linux - Desktop and Server</span>
-            <p>Arch and Ubuntu based systems, shell, file transfer, ssl integration, iptable firewalls, https redirection, system maintenance, user permissions</p>
-            <i class="fa fa-wordpress"></i> <span class="bold">Wordpress</span>
-            <p>Codex, mySql DB, child theme customization, load time and pagespeed analysis</p>
-            <i class="fa fa-terminal"></i> <span class="bold">Chrome & Firefox Dev Tools</span>
+            <p>Arch and Ubuntu based systems, bash scripting, file transfer, ssl integration, ssh, iptable firewalls, https redirection, system maintenance, user permissions</p>
+            <i class="fa fa-paint-brush"></i> <span class="bold">3D</span>
+            <p>Luxology Modo, Zbrush, and Maya, MotionBuilder, Unity3d - character design, environment hard-surface modeling, freehand &amp; mocap animation</p>
+            <i class="fa fa-terminal"></i> <span class="bold">Chrome &amp; Firefox Dev Tools</span>
             <p>Inspector, console debugging, network profiling, process monitoring, device testing</p>
             <i class="fa fa-file-code-o"></i> <span class="bold">Text Editors/IDEs</span>
-            <p>Webstorm, Atom, Sublime Text, Nano</p>
-            <i class="fa fa-paint-brush"></i> <span class="bold">3D</span>
-            <p>Luxology Modo, Zbrush, and Maya from modeling to rendering</p>
+            <p>Vim, Monodevelop, Visual Studio, Sublime Text</p>
             <i class="fa fa-google"></i> <span class="bold">Google</span>
             <p>Analytics, Adwords, and Google Web Designer - image and HTML5 ads, user behaviour and metrics, goals and tracking code implementation, customization, and debugging</p>
             <i class="fa fa-cogs"></i> <span class="bold">Visual Website Optimizer</span>
             <p>A/B, split url, and multi-variant testing, heatmap and behaviour recording analysis, and reporting</p>
+            <i class="fa fa-wordpress"></i> <span class="bold">Wordpress</span>
+            <p>Codex, mySql DB, child theme customization, load time and pagespeed analysis</p>
+
             <h3>Other</h3>
-            <i class="fa fa-bullhorn"></i> <span class="bold">Email Marketing</span>
-            <p>Campaign Monitor, Mailchimp, responsive layout coding/testing/debugging, design for high CTR</p>
+
             <i class="fa fa-forward"></i> <span class="bold">Wireframing, Storyboarding, and Prototyping</span>
-            <p>UX, user flow, diagramming, and visual development for interactive and entertainment pieces.</p>
+            <p>UX, user flow, diagramming, and visual development for interactive and entertainment pieces, responsive and assistive UI design, implementation, and testing</p>
+
+            <i class="fa fa-bullhorn"></i> <span class="bold">Email Marketing</span>
+            <p>Campaign Monitor, Mailchimp, responsive layout coding/testing/debugging, design for high CTR, user engagement</p>
+
             <i class="fa fa-plug"></i> <span class="bold">Computer Hardware / IOT</span>
-            <p>Building hardware controllers with Atmel processors, firmware tinkering, enclosure design and construction</p>
+            <p>Building hardware controllers with Atmel processors, firmware modification, enclosure design and construction, user input methods, embedded linux systems</p>
+
           </div>
           </div>
         <div class="section-no-dots"></div>
@@ -403,6 +413,32 @@
 
               <article>
                 <figure>
+                  <h3>Start Page</h3>
+                  <p>
+                    I wanted a personalized start page with common links I use, search features, and relevant hud stats and naturally it had to be navigable w/o the use of a mouse. Additionally, I wanted local info like weather, time, and IP auto-configured; and important information legible from across the room w/o taking over the smaller elements in the viewport.
+                  </p>
+                  <div class="cont-img-inl">
+                    <img src="images/web_start_page_01.png" alt="start personal in-browser start page">  
+                  </div>
+                  <figcaption>
+                  <p>
+                    You can use 'ctrl + c' to randomly change the colour palette, and use arrow keys to navigate any of the search and link functions of the page while still being completely touch/pointer friendly. The tile grid of links is calculated by vertical offset, and re-logs on browser resize so it should handle any number of additional or subtracted link tiles.
+                  </p>
+                  <p>
+                    Background weather images are loaded in response from local weather data polled every 20s, and crossfade when weather conditions change. Mini search icons are listed below the search input to correspond with search sites and switch when clicked, L or R arrow keys are used, or the search field is swiped on mobile.
+                  </p>
+                  <p>
+                    I've included arrays to easily add more search sites, respective placeholder names for them, and corresponding icons. I regularly add new features, and you're welcome to check out and/or fork on github. I'm glad to help out if you're not completely familiar w/ js/html/css and want to personalize your own.
+                  </p>
+                  <p>
+                    <span class="font-code-bracket">&gt;</span><span class="font-code"> go start</span>
+                  </p>
+                </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
                   <h3>GFV - JQuery Form Validation</h3>
                   <p>
                     Unhappy with form validation on our landing pages at Element-360 I created an extension with JQuery, exclusively to extend the capabilities of Gravity Forms. In watching behaviour analysis recordings I found a large number of people clicking the CTA to immediately receive information. This results in a page reload with error messages appended to the required fields - not an optimal user experience.
@@ -418,6 +454,7 @@
                       <li>UI change from button click - of blank required fields</li>
                       <li>Validation check (logic and visual) on field blur</li>
                       <li>Email regex validation</li>
+                      <li>Client-side validation, w/o AJAX</li>
                       <li>Simple, safisfying UX (people have a mote of tolerance on landing pages)</li>
                     </ul>
                   </p>
@@ -451,20 +488,6 @@
 
               <article>
                 <figure>
-                  <h3>Responsive, Animated Banner Button</h3>
-                  <div class="resp-iframe-container">
-                    <iframe src="web-banner-button.html" width="100%" height="390"></iframe>
-                  </div>
-                  <figcaption>
-                    <p>
-                      A unique JSFiddle exercise to create a fun, responsive banner-style button with CSS hover animation, while maintaining the vertical position of the text below. Hover the button and expand the container window to test (note: webkit doesn't let you resize down...?).
-                    </p>
-                  </figcaption>
-                </figure>
-              </article>
-
-              <article>
-                <figure>
                   <h3>silvermuse.net</h3>
                   <img src="images/web_site_silvermuse_01_c.png" alt="Screenshots of silvermuse.net, a website I created to display the work and services of a close friend and colleague Claudette Silver">
                   <figcaption>
@@ -479,6 +502,20 @@
                     </p>
                     <p class="p-sites">
                       <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go silvermuse</span>
+                    </p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <h3>Responsive, Animated Banner Button</h3>
+                  <div class="resp-iframe-container">
+                    <iframe src="web-banner-button.html" width="100%" height="390"></iframe>
+                  </div>
+                  <figcaption>
+                    <p>
+                      A unique JSFiddle exercise to create a fun, responsive banner-style button with CSS hover animation, while maintaining the vertical position of the text below. Hover the button and expand the container window to test (note: webkit doesn't let you resize down...?).
                     </p>
                   </figcaption>
                 </figure>
@@ -959,8 +996,9 @@
 </script>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script> -->
 <!-- <script src="js/main.min.js" async></script> -->
+<script src="js/velocity.min.js" async></script>
 <script src="js/main.min.js" async></script>
 
 <!-- Google Analytics-->
