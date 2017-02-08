@@ -1036,10 +1036,10 @@ function setSectionHeight() {
     }
 
     // CACHE HEIGHT OF SCROLL BAR IF POSTS IS SCROLLABLE
-    if (scrollBarHeightCalc < 100) {
-      var scrollBarClassCache = cmdInputIdDom.getElementsByClassName('scroll-bar-move')[0];
-      scrollBarRenderHeightPx = scrollBarClassCache.clientHeight;
-    }
+    // if (scrollBarHeightCalc < 100) {
+    //   var scrollBarClassCache = cmdInputIdDom.getElementsByClassName('scroll-bar-move')[0];
+    //   scrollBarRenderHeightPx = scrollBarClassCache.clientHeight;
+    // }
   }, 50);
 
 }
