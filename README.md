@@ -6,7 +6,7 @@
 
 `LS`  show all main navigation sections   
 
-`HOME`  `HELP`  go back to the main intro/instructional screen anytime   
+`HOME` or `HELP`  go back to the main intro/instructional screen anytime   
 
 `BACK`  go back to previous section   
 
