@@ -685,7 +685,7 @@ function loadWelcome() {
         else if(cmdInput === "ls" || cmdInput === "dir" || cmdInput === "ls -al" || cmdInput === "ls -alt") {
 
           // (NOTE) CHANGE TO FOR LOOP, ITER THROUGH ARRAY
-          cmdListUpdate += "> " + cmdInput + "<br><br>" + "&nbsp; > WEB<br>" + "&nbsp; > ART<br>" + "&nbsp; > ABOUT<br>" + "&nbsp; > SKILLS<br>" + "&nbsp; > LINKS<br>" + "&nbsp; > RESUME<br>" + "<br>";
+          cmdListUpdate += "> " + cmdInput + "<br><br>" + "&nbsp; > DEV<br>" + "&nbsp; > ART<br>" + "&nbsp; > ABOUT<br>" + "&nbsp; > SKILLS<br>" + "&nbsp; > LINKS<br>" + "&nbsp; > RESUME<br>" + "<br>";
           cmdListDom.innerHTML = cmdListUpdate;
           cmdClear();
           cmdCheck("ls", 400);
