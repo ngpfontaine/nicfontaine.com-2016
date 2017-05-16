@@ -723,14 +723,16 @@ section {
   position: relative;
   /*margin: 0 auto;*/
   margin: 220px auto 200px auto;
+  /*margin: 0 auto;*/
   /*padding: 23px;*/
   box-sizing: border-box;
   font-size: 16px;
-  line-height: 30px;
-  width: 80%;
+  line-height: 28px;
+  width: 90%;
   max-width: 790px;
-  color: #5E5F6B;
+  color: #4F505C;
   background: #ccc;
+  /*transform: translateY(67%);*/
 }
 
 section h1 {
@@ -1224,17 +1226,56 @@ footer {
   margin: 0 1%;
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1200px) {
+
   section h1 {
     font-size: 43px;
     top: -39px;
     left: 0;
   }
+
+  #cmd-container {
+    width: 100%;
+    pointer-events: none;
+  }
+
+  #cmd-outer {
+    margin: 0 auto;
+    max-width: 420px;
+  }
+
+  #content-container {
+    width: 100%;
+  }
+
+  #footer-inner {
+    width: 100%;
+  }
+
+  #cmd-list-container {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    right: 0;
+    left: 0;
+    display: none;
+  }
+
+  #cmd-list {
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  section {
+    width: 95%;
+  }
+
 }
 
 /*** @MEDIA < 1024 ***/
 
-@media(max-width: 1024px) {
+@media(max-width: 700px) {
 
   /*** (NOTE) MOBILE PENDING STYLES ***/
 

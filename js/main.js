@@ -737,73 +737,85 @@ function loadWelcome() {
         }
         else if (cmdInput.indexOf('go') > -1) {
           if (cmdInput === "go twitter") {
-            window.open("http://www.twitter.com/ngpfontaine", "_blank");
+            location.href = "http://www.twitter.com/ngpfontaine";
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if(cmdInput === "go resume") {
-            window.open("http://nicfontaine.com/images/nf_resume_01_20160402.pdf", "_blank");
+            location.href = "http://nicfontaine.com/images/nf_resume_01_20160402.pdf";
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go 3midesign') {
-            window.open('https://nicfontaine.com/sites/3mi', '_blank');
+            location.href = 'https://nicfontaine.com/sites/3mi';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go silvermuse') {
-            window.open('http://silvermuse.net', '_blank');
+            location.href = 'http://silvermuse.net';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go ihl') {
-            window.open('http://www.ianhaneylopez.com', '_blank');
+            location.href = 'http://www.ianhaneylopez.com';
+            cmdListUpdate += "> " + cmdInput + "<br><br>";
+            cmdListDom.innerHTML = cmdListUpdate;
+            cmdClear();
+          }
+          else if (cmdInput === 'go thalia') {
+            location.href = 'https://thaliamae.com';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go nic2013') {
-            window.open('https://nicfontaine.com/sites/2013', '_blank');
+            location.href = 'https://nicfontaine.com/sites/2013';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go gforms') {
-            window.open('https://github.com/ngpfontaine/gfv', '_blank');
+            location.href = 'https://github.com/ngpfontaine/gfv';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go github') {
-            window.open('https://github.com/ngpfontaine', '_blank');
+            location.href = 'https://github.com/ngpfontaine';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go turtlelinks') {
-            window.open('https://www.youtube.com/watch?v=ojJFZF8tUSM', '_blank');
+            location.href = 'https://www.youtube.com/watch?v=ojJFZF8tUSM';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go bunkerblast') {
-            window.open('https://vimeo.com/162212564', '_blank');
+            location.href = 'https://vimeo.com/162212564';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go vimeo') {
-            window.open('https://vimeo.com/ngpfontaine', '_blank');
+            location.href = 'https://vimeo.com/ngpfontaine';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
           }
           else if (cmdInput === 'go start') {
-            window.open('https://github.com/ngpfontaine/start', '_blank');
+            location.href = 'https://github.com/ngpfontaine/start';
+            cmdListUpdate += "> " + cmdInput + "<br><br>";
+            cmdListDom.innerHTML = cmdListUpdate;
+            cmdClear();
+          }
+          else if (cmdInput === 'go clpsm') {
+            location.href = 'https://github.com/ngpfontaine/clpsm';
             cmdListUpdate += "> " + cmdInput + "<br><br>";
             cmdListDom.innerHTML = cmdListUpdate;
             cmdClear();
@@ -882,7 +894,7 @@ function cmdCheck(x, y) {
   if (sectionArticleNo > 1) {
 
     // SLIDE BACK TO FIRST ARTICLE EVERY COMMAND CALL TO PREVENT GETTING STUCK AT > 0
-    Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 });
+    Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 0, axis: 'x', opacity: 1 });
 
     // CLEAR DOTS TO PREVENT STACKING FROM MULTIPLE CMDS
     var dotNode = cmdInputIdDom.getElementsByClassName('section-no-dots')[0];
@@ -992,9 +1004,9 @@ function hideShowScrollArrows(x,y) {
 
 // HIDE & SHOW INSTRUCTIONS SCROLL 'none', 'block'
 function hideShowInstructionsScroll(x) {
-    for (i=0; i<instructionsScrollDom.length; i++) {
-      instructionsScrollDom[i].style.display = x;
-    }
+  for (i=0; i<instructionsScrollDom.length; i++) {
+    instructionsScrollDom[i].style.display = x;
+  }
 }
 
 function setSectionHeight() {
