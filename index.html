@@ -13,13 +13,18 @@
   <link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
-<body onload="loadWelcome();">
+<body>
+
+  <!-- MESSAGES -->
+  <div class='intro-msg' id='intro-msg-01'>Welcome user <br><span id='user-id'></span></div>
+  <div class='intro-msg' id='intro-msg-02'>Where you're going, you won't be needing a mouse</div>
+  <div class='intro-msg' id='intro-msg-03'>It's keyboard time..<span class='dot-blinking'>.</span></div>
+
   <div id="bg-pattern"></div>
-  <!--<div id="bg-letter">CN</div>-->
   <header id="header">
     <div id="header-inner">
       <div id="header-blend" class="pos-abs"></div>
-      <!-- <div id="header-nav">/////////////// -->
+      <!-- <div id="header-nav">///////////////</div> -->
       <div id="header-nav">
           &nbsp;
       </div>
@@ -84,11 +89,9 @@
 
                 <p><i class="fa fa-bolt"></i> Welcome to my unconventional, command line based portfolio</p>
 
-                <p><i class="fa fa-bolt"></i> Enter your commands in the input and output will appear below</p>
+                <p><i class="fa fa-bolt"></i> Enter your commands in the input, and output will appear below</p>
 
                 <p><i class="fa fa-bolt"></i> Use <span class="bold">arrow keys</span> to navigate content: scroll <span class="key-code key-ud"><i class="fa fa-chevron-down" style="margin-right: 0;"></i></span> <span class="key-code key-ud"><i class="fa fa-chevron-up" style="margin-right: 0;"></i></span> &amp; slides <span class="key-code key-lr"><i class="fa fa-chevron-left" style="margin-right: 0;"></i></span> <span class="key-code key-lr"><i class="fa fa-chevron-right" style="margin-right: 0;"></i></span></p>
-
-                <p><i class="fa fa-bolt"></i> No mouse needed!</p>
 
                 <h3 style='margin-top: 50px;'>Get Started</h3>
 
@@ -422,31 +425,78 @@
           <div class="section-inner">
             <div class="padding-inner">
 
-              <article>
-                <figure>
-                  <h3>Start Page</h3>
+            <article>
+              <figure>
+                <h3>Zoom Scheduling App</h3>
+                <p>
+                  A small session scheduling web-app created to connect a group of learners, over a few-week timespan, to multiple Zoom accounts for simulation delivery. Built on NodeJS with Express to manage views, and using the ZOOM RestAPI to create and cancel meetings. Without the need for a full database, sign-up contact info &amp; zoom url are entered into a JSON file organized by date.
+                </p>
+                <p>
+                  Nodemailer is used to send booking confirmation emails, and are set to send a reminder before the scheduled session time. Booking emails contain cancellation links that clear the Zoom meeting entry, reminder-email flag, and booking slot.
+                </p>
+                <p>
+                  It's quick, light, and easy to re-skin for new clients' pilot deliveries.
+                </p>
+                <div class="cont-img-inl">
+                  <img src="images/web-session-scheduling-01.png" alt="scheduling application">  
+                </div>
+                <div class="cont-img-inl">
+                  <img src="images/web-session-scheduling-02.png" alt="scheduling application">  
+                </div>
+                <div class="cont-img-inl">
+                  <img src="images/web-session-scheduling-03.png" alt="scheduling application">  
+                </div>
+                <figcaption>
+                <!-- <p>
+                  <span class="font-code-bracket">&gt;</span><span class="font-code"> </span>
+                </p> -->
+              </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <h3>ianhaneylopez.com</h3>
+                <img src="images/web_site_ianhaneylopez_01_c.png" alt="Screenshots of ianhaneylopez.com, Wordpress site created for a professor of law at Berkeley.">
+                <figcaption>
                   <p>
-                    I wanted a personalized start page with common links I use, search features, and relevant hud stats and naturally it had to be navigable w/o the use of a mouse. Additionally, I wanted local info like weather, time, and IP auto-configured; and important information legible from across the room w/o taking over the smaller elements in the viewport.
+                    I won't try to paraphrase Ian's (a chaired law professor at Berkeley) ideas and insights as I feel that is better left to him, but for the technical info - I designed a custom, simple, and clean Wordpress theme built for regular additions of writings, interviews, and events &amp; publications.
                   </p>
-                  <div class="cont-img-inl">
-                    <img src="images/web_start_page_01.png" alt="personal in-browser start page">  
-                  </div>
-                  <figcaption>
                   <p>
-                    You can use 'ctrl + c' to randomly change the colour palette, and use arrow keys to navigate any of the search and link functions of the page while still being completely touch/pointer friendly. The tile grid of links is calculated by vertical offset, and re-logs on browser resize so it should handle any number of additional or subtracted link tiles.
+                    I feel the site does a good job of cleanly hosting his work in a unique and memorable fashion while neither falling short and coming off as a basic blog theme or pushing too much design for the collegiate/political world.
                   </p>
-                  <p>
-                    Background weather images are loaded in response from local weather data polled every 20s, and crossfade when weather conditions change. Mini search icons are listed below the search input to correspond with search sites; and switch when clicked, L or R arrow keys are used, or the search field is swiped on mobile.
-                  </p>
-                  <p>
-                    I've included arrays to easily add more search sites, respective placeholder names for them, and corresponding icons. I regularly add new features, and you're welcome to check out and/or fork on github. I'm glad to help out if you're not completely familiar with js/html/css and want to personalize your own.
-                  </p>
-                  <p>
-                    <span class="font-code-bracket">&gt;</span><span class="font-code"> go start</span>
+                  <p class="p-sites">
+                    <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go ihl</span>
                   </p>
                 </figcaption>
-                </figure>
-              </article>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <h3>Start Page</h3>
+                <p>
+                  I wanted a personalized start page with common links I use, search features, and relevant hud stats and naturally it had to be navigable w/o the use of a mouse. Additionally, I wanted local info like weather, time, and IP auto-configured; and important information legible from across the room w/o taking over the smaller elements in the viewport.
+                </p>
+                <div class="cont-img-inl">
+                  <img src="images/web_start_page_01.png" alt="personal in-browser start page">  
+                </div>
+                <figcaption>
+                <p>
+                  You can use 'ctrl + c' to randomly change the colour palette, and use arrow keys to navigate any of the search and link functions of the page while still being completely touch/pointer friendly. The tile grid of links is calculated by vertical offset, and re-logs on browser resize so it should handle any number of additional or subtracted link tiles.
+                </p>
+                <p>
+                  Background weather images are loaded in response from local weather data polled every 20s, and crossfade when weather conditions change. Mini search icons are listed below the search input to correspond with search sites; and switch when clicked, L or R arrow keys are used, or the search field is swiped on mobile.
+                </p>
+                <p>
+                  I've included arrays to easily add more search sites, respective placeholder names for them, and corresponding icons. I regularly add new features, and you're welcome to check out and/or fork on github. I'm glad to help out if you're not completely familiar with js/html/css and want to personalize your own.
+                </p>
+                <p>
+                  <span class="font-code-bracket">&gt;</span><span class="font-code"> go start</span>
+                </p>
+              </figcaption>
+              </figure>
+            </article>
 
               <article>
                 <figure>
@@ -468,24 +518,6 @@
                     <span class="font-code-bracket">&gt;</span><span class="font-code"> go clpsm</span>
                   </p>
                 </figcaption>
-                </figure>
-              </article>
-
-              <article>
-                <figure>
-                  <h3>ianhaneylopez.com</h3>
-                  <img src="images/web_site_ianhaneylopez_01_c.png" alt="Screenshots of ianhaneylopez.com, Wordpress site created for a professor of law at Berkeley.">
-                  <figcaption>
-                    <p>
-                      I won't try to paraphrase Ian's (a chaired law professor at Berkeley) ideas and insights as I feel that is better left to him, but for the technical info - I designed a custom, simple, and clean Wordpress theme built for regular additions of writings, interviews, and events &amp; publications.
-                    </p>
-                    <p>
-                      I feel the site does a good job of cleanly hosting his work in a unique and memorable fashion while neither falling short and coming off as a basic blog theme or pushing too much design for the collegiate/political world.
-                    </p>
-                    <p class="p-sites">
-                      <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go ihl</span>
-                    </p>
-                  </figcaption>
                 </figure>
               </article>
 
@@ -584,9 +616,9 @@
                     <p>
                       She also loved my idea for an "anti-slideshow" atop the homepage. It's great to have a client who can appreciate and complain with the best of 'em, and it's easy to foster great design inspiration when awesome content is brought to the table.
                     </p>
-                    <p class="p-sites">
+                    <!-- <p class="p-sites">
                       <i class="fa fa-bolt"></i> Visit with <span class="font-code-bracket">&gt;</span><span class="font-code"> go silvermuse</span>
-                    </p>
+                    </p> -->
                   </figcaption>
                 </figure>
               </article>
@@ -633,44 +665,6 @@
                 </figure>
               </article>
 
-              <article>
-                <figure>
-                  <h3>About My Website</h3>
-                  <!-- <img src="images/web_form_validation_gif_01.gif"> -->
-                  <figcaption>
-                  <p>
-                    I'm tired of wordpress themes and I enjoy the unix terminal, [full-stop].
-                  </p>
-                  <p>
-                    But really, I had a few objectives in making this site. I love using a keyboard; and have minimized reliance on mouse input for navigation almost as much as possible within browsers. So one goal was to give the user (1) a site they could navigate without moving their hands from the keyboard, while (2) challenging web-navigation conventions to give said user a unique and memorable experience.
-                  </p>
-                  <p>
-                    As a GNU Linux believer, I naturally wanted to give unix-experienced users a familiar feel while introducing to the unaccustomed a small window into terminal commands and key navigation. As a front end web-developer, it was important to try something experimental; to run as far away from fullscreen img + headline + call-to-action as possible. Given, the mobile site is another problem left to tackle, I enjoy the UX I've created.
-                  </p>
-                  <p>
-                    Code wise - after starting to quickly prototype everything with JQuery, all events and DOM updates were swapped out with Vanilla JS as a challenge, learning experience, and optimization technique. Velocity.js is used for &lt;section&gt; movement and fade invoked with command calls, while other visual changes (like site colour shift) are mostly CSS animations.
-                  </p>
-                  <p>
-                    Many of the content sections are repeated templates, so I have a container at the bottom of the &lt;body&gt; from which to copy with cloneNode and insert. The DOM is semantically organized into &lt;sections&gt; for each site section, and &lt;articles&gt; within - that act as figure/figcaption slides. Each command inserts a hash into the url to enable copying/bookmarking that particular section, yet I have preserved the history state - so the browser back button will leave the site regardless of hash. Additionally, commands are pushed into an array to enable the <span class="font-code-bracket">&gt;</span><span class="font-code"> BACK</span> function. Keyboard back is disabled to prevent accidental browser back triggers - you can see that holding down the back button will not continuously delete command letters.
-                  </p>
-                  <p>
-                    As this is a single-page site with many unique groupings of content, I've tried out segmenting each into &lt;sections&gt; - each with an &lt;h1&gt;. I'm curious how this will be crawled SEO-wise.
-                  </p>
-                 </figcaption>
-               </figure>
-              </article>
-
-              <!-- <article>
-                <figure>
-                  <h3>A/B Testing</h3>
-                  <figcaption>
-                  <p>
-                    [content to come]
-                  </p>
-                  </figcaption>
-                </figure>
-              </article> -->
-
             </div>
           </div>
           <div class="section-no-dots"></div>
@@ -712,7 +706,7 @@
 
                 <h4>Personal</h4>
                 <p>
-                  I'm a North Florida migrant to Asheville, North Carolina for education at the University of North Carolina at Asheville, and a graduate of the comprehensive New Media program specializing in 3D Animation under the tutelage esteemed industry professionals and trusted friends Christopher Oakley and Chris McKee.
+                  I'm a North Florida migrant to Asheville, North Carolina for education at the University of North Carolina at Asheville, and a graduate of the comprehensive New Media program specializing in 3D Animation under the tutelage esteemed industry professionals and trusted friends Christopher Oakley and Chris McKee. After spending some professionally diverse years in AVL, I relocated to San Francisco in the summer of 2016; where I'm currently located at least for a while.
                 <p>
 
                 <p>
@@ -730,7 +724,7 @@
                 </p>
 
                 <p>
-                  I'll snip the manefesto (truly before it's time) and leave you to explore. I'd be happy and grateful to receive notifications of any bugs you encounter, general networking/professional introductions, contract inquiries of any size, or the like at my email address - <span style="font-weight: bold;">ngpfontaine@gmail.com</span>. Thank you, and have a good time during your stay.
+                  I'll snip the manefesto (truly before it's time) and leave you to explore. I'd be happy and grateful to receive notifications of any bugs you encounter, general networking/professional introductions, contract inquiries of any size, or the like at my email address - <span style="font-weight: bold;">ngpfontaine@protonmail.com</span>. Thank you, and have a good time during your stay.
                 </p>
                 </figure>
               </article>
@@ -1037,7 +1031,7 @@
               <p class="bold">
                 Examples:
               </p>
-              <p><span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go github</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go vimeo</span></p>
+              <p><!-- <span class="font-code-bracket">&gt;</span><span class="font-code"> go email</span> --> <span class="font-code-bracket">&gt;</span><span class="font-code"> go linkedin</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go twitter</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go instagram</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go github</span> <span class="font-code-bracket">&gt;</span><span class="font-code"> go vimeo</span></p>
             </div>
           </div>
           <div class="section-no-dots"></div>

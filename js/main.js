@@ -110,6 +110,55 @@ var cmdArrayHome = ["home", "help", "refresh", "index", "welcome", "splash"];
 //   sectionsDom[i].parentNode.insertBefore(text, sectionsDom[i]);
 // }
 
+function makeid() {
+  var text = ""
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678901234567890123456789!@#$%^*()"
+
+  for (var i = 0; i < 6; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
+  }
+  return text
+}
+
+// LOAD
+window.onload = function() {
+  const baseTime = 100
+  // 01
+  setTimeout(function() {
+    document.getElementById('user-id').innerHTML = ' _' + makeid()
+    document.getElementById('intro-msg-01').classList.add('show')
+  },baseTime)
+  // 01 HIDE
+  setTimeout(function() {
+    document.getElementById('intro-msg-01').classList.remove('show')
+  },baseTime+2500)
+  // 02 SHOW
+  setTimeout(function() {
+    document.getElementById('intro-msg-02').classList.add('show')
+  },baseTime+3300)
+  // 02 HIDE
+  setTimeout(function() {
+    document.getElementById('intro-msg-02').classList.remove('show')
+  },baseTime+7000)
+  // 03 SHOW
+  setTimeout(function() {
+    document.getElementById('intro-msg-03').classList.add('show')
+  },baseTime+7700)
+  // 03 HIDE
+  setTimeout(function() {
+    document.getElementById('intro-msg-03').classList.remove('show')
+
+    document.getElementById('cmd-outer').classList.add('cmd-in')
+    document.getElementById('cmd-list-container').classList.add('cmd-in')
+    document.getElementById('footer').classList.add('cmd-in')
+    document.getElementById('header').classList.add('move-in')
+
+  },baseTime+10200)
+  setTimeout(function() {
+    loadWelcome()
+  },baseTime+11200)
+}
+
 // FOCUS INPUT ON CLICK ANYWHERE
 document.addEventListener('click', function() {
   cliInputFocus();
@@ -141,32 +190,17 @@ function loadWelcome() {
       setTimeout(function() {
         cmdCheck(urlQuery, 400);
       }, 200);
-    }, 1300);
+    }, 1000);
   }
   // urlQuery IS UNDEFINED, I.E. BLANK
   else {
     console.log('no urlQuery, running "home"');
     setTimeout(function() {
       cmdCheck('home', 1300);
-    }, 1300);
+    }, 1000);
   }
 
   cmdListDom.innerHTML = startHelpInfo;
-
-  // PRINT OUT START INSTRUCTIONS
-  // (NOTE) NEEDS SOME WORK
-  // function startPrint(id, sentence) {
-  //   var f;
-  //   f= function(i){
-  //       id.innerHTML+=sentence[i];
-  //       if(i+1==sentence.length)
-  //          return;
-  //       window.setTimeout(function(){f(i+1);},50);
-  //   }
-  //   f(0);
-  // }
-
-  // startPrint(cmdListDom, startHelpInfo);
 
 }
 

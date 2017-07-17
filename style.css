@@ -100,6 +100,46 @@ iframe {
 
 /*COLOR SCRUBS*/
 
+/*INTRO MESSAGES*/
+.intro-msg {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  position: fixed;
+  right: 0; left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  font-size: 2.5em;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  z-index: 5;
+  background: rgba(0,0,0,0.15);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.intro-msg.show {
+  opacity: 1;
+  transform: translateY(-60%);
+}
+
+#user-id {
+  font-family: 'Anonymous-Pro', courier, monospace;
+  font-weight: 700;
+}
+
+.dot-blinking {
+  animation: dotBlinking 0.8s linear infinite;
+  /* opacity: 0; */
+}
+
+@keyframes dotBlinking {
+  0% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
+  99% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /*MID BACKGROUND*/
 @keyframes scrub-html {
   0% {background-color: hsl(305,25%,10%);}
@@ -141,7 +181,7 @@ iframe {
   100% { transform: translateY(0); }
 }
 
-header {
+#header {
   display: none;
   position: fixed;
   width: 100%;
@@ -149,15 +189,24 @@ header {
   height: 43px;
   z-index: 11;
   background: #4C2349;
-  animation: move-header 3s 1;
-  -webkit-animation: move-header 3s 1;
-  transform: translateY(0);
+  transform: translateY(-43px);
   animation-fill-mode: forwards;
 }
 
-#cmd-outer, #cmd-list-container, footer {
-  animation: cmd-fade 3.2s 1;
-  -webkit-animation: cmd-fade 3.2s 1;
+#header.move-in {
+  animation: move-header 3s 1;
+  -webkit-animation: move-header 3s 1;
+  animation-fill-mode: forwards;
+}
+
+#cmd-outer, #cmd-list-container, #footer {
+  opacity: 0;
+}
+
+#cmd-outer.cmd-in, #cmd-list-container.cmd-in, #footer.cmd-in {
+  animation: cmd-fade 2.8s 1;
+  -webkit-animation: cmd-fade 2.8s 1;
+  animation-fill-mode: forwards;
 }
 
 
