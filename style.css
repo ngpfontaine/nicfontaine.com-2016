@@ -154,13 +154,13 @@ iframe {
 
 #bg-pattern {
   background: hsl(305,25%,10%);
-  animation: scrub-html 110s infinite;
-  -webkit-animation: scrub-html 110s infinite;
+  animation: scrub-html 90s infinite;
+  -webkit-animation: scrub-html 90s infinite;
 }
 
 .font-code {
-  animation: scrub-html 110s infinite;
-  -webkit-animation: scrub-html 110s infinite;
+  animation: scrub-html 90s infinite;
+  -webkit-animation: scrub-html 90s infinite;
 }
 
 /*HEADER BACKGROUND*/
@@ -218,7 +218,7 @@ iframe {
 
 #header-inner {
   background: #4C2349;
-  animation: scrub-header-bg 110s infinite;
+  animation: scrub-header-bg 90s infinite;
   height: 100%;
 }
 
@@ -238,8 +238,8 @@ h3::before {
   /*background: #4C2349;*/
   border-bottom: 4px solid #aaa;
   opacity: 0.2;
-  animation: scrub-h3-border 110s infinite;
-  -webkit-animation: scrub-h3-border 110s infinite;
+  animation: scrub-h3-border 90s infinite;
+  -webkit-animation: scrub-h3-border 90s infinite;
 }
 
 /*DARK BACKGROUND*/
@@ -268,8 +268,8 @@ h3::before {
 
 #header-nav, #social-container a i, #footer-name {
   color: #942D94;
-  animation: scrub-header-footer-text 110s infinite;
-  -webkit-animation: scrub-header-footer-text 110s infinite;
+  animation: scrub-header-footer-text 90s infinite;
+  -webkit-animation: scrub-header-footer-text 90s infinite;
 }
 
 /*CMD TEXT*/
@@ -286,8 +286,8 @@ h3::before {
 
 #cmd span, #cmd-input-container {
   color: #B233B0;
-  animation: scrub-cmd-text 110s infinite;
-  -webkit-animation: scrub-cmd-text 110s infinite;
+  animation: scrub-cmd-text 90s infinite;
+  -webkit-animation: scrub-cmd-text 90s infinite;
 }
 
 /*NOTE SHADOW*/
@@ -305,8 +305,8 @@ h3::before {
 .font-note {
   text-shadow: 0 0 2px #B233B0;
   color: #B233B0;
-  animation: scrub-note 110s infinite;
-  -webkit-animation: scrub-note 110s infinite;
+  animation: scrub-note 90s infinite;
+  -webkit-animation: scrub-note 90s infinite;
 }
 
 /*CMD BORDER*/
@@ -323,8 +323,8 @@ h3::before {
 
 #cmd {
   border-color: #983E90;
-  animation: scrub-cmd-border 110s infinite;
-  -webkit-animation: scrub-cmd-border 110s infinite;
+  animation: scrub-cmd-border 90s infinite;
+  -webkit-animation: scrub-cmd-border 90s infinite;
 }
 
 /*CURSOR*/
@@ -341,8 +341,8 @@ h3::before {
 
 #cursor {
   background-color: #9E2E9E;
-  animation: scrub-cursor 110s infinite;
-  -webkit-animation: scrub-cursor 110s infinite;
+  animation: scrub-cursor 90s infinite;
+  -webkit-animation: scrub-cursor 90s infinite;
 }
 
 /*BACKGROUND FOOTER*/
@@ -360,8 +360,8 @@ h3::before {
 #footer-inner {
   color: #942D94;
   background-color: #150E15;
-  animation: scrub-footer 110s infinite;
-  -webkit-animation: scrub-footer 110s infinite;
+  animation: scrub-footer 90s infinite;
+  -webkit-animation: scrub-footer 90s infinite;
 }
 
 /*FONT CODE*/
@@ -378,8 +378,8 @@ h3::before {
 
 .font-code {
   color: #39C65F;
-  animation: scrub-font-code 110s infinite;
-  -webkit-animation: scrub-font-code 110s infinite;
+  animation: scrub-font-code 90s infinite;
+  -webkit-animation: scrub-font-code 90s infinite;
 }
 
 /*FONT BRACKET*/
@@ -396,8 +396,8 @@ h3::before {
 
 .font-code-bracket {
   color: #1C632F;
-  animation: scrub-font-bracket 110s infinite;
-  -webkit-animation: scrub-font-bracket 110s infinite;
+  animation: scrub-font-bracket 90s infinite;
+  -webkit-animation: scrub-font-bracket 90s infinite;
 }
 
 /*CMD LIST*/
@@ -414,8 +414,8 @@ h3::before {
 
 #cmd-list {
   color: #39C663;
-  animation: scrub-cmd-list 110s infinite;
-  -webkit-animation: scrub-cmd-list 110s infinite;
+  animation: scrub-cmd-list 90s infinite;
+  -webkit-animation: scrub-cmd-list 90s infinite;
 }
 
 @keyframes scroll-arrow-pulse-bot {
@@ -958,8 +958,8 @@ section p {
   /*background: #bbb;*/
   max-width: 30px;
   opacity: 0.15;
-  animation: scrub-cursor 110s infinite;
-  -webkit-animation: scrub-cursor 110s infinite;
+  animation: scrub-cursor 90s infinite;
+  -webkit-animation: scrub-cursor 90s infinite;
 
 }
 
