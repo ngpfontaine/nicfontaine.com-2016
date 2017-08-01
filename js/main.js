@@ -122,41 +122,65 @@ function makeid() {
 
 // LOAD
 window.onload = function() {
+  introAnimation();
+}
+
+var introTimeouts = [];
+var introAnimRunning = true;
+
+function introAnimation() {
   const baseTime = 100
   // 01
-  setTimeout(function() {
+  introTimeouts[0] = setTimeout(function() {
     document.getElementById('user-id').innerHTML = ' _' + makeid()
     document.getElementById('intro-msg-01').classList.add('show')
   },baseTime)
   // 01 HIDE
-  setTimeout(function() {
+  introTimeouts[1] = setTimeout(function() {
     document.getElementById('intro-msg-01').classList.remove('show')
   },baseTime+2500)
   // 02 SHOW
-  setTimeout(function() {
+  introTimeouts[2] = setTimeout(function() {
     document.getElementById('intro-msg-02').classList.add('show')
   },baseTime+3300)
   // 02 HIDE
-  setTimeout(function() {
+  introTimeouts[3] = setTimeout(function() {
     document.getElementById('intro-msg-02').classList.remove('show')
   },baseTime+7000)
   // 03 SHOW
-  setTimeout(function() {
+  introTimeouts[4] = setTimeout(function() {
     document.getElementById('intro-msg-03').classList.add('show')
   },baseTime+7700)
   // 03 HIDE
-  setTimeout(function() {
-    document.getElementById('intro-msg-03').classList.remove('show')
-
-    document.getElementById('cmd-outer').classList.add('cmd-in')
-    document.getElementById('cmd-list-container').classList.add('cmd-in')
-    document.getElementById('footer').classList.add('cmd-in')
-    document.getElementById('header').classList.add('move-in')
+  introTimeouts[5] = setTimeout(function() {
+    document.getElementById('intro-msg-03').classList.remove('show');
+    document.getElementById('cmd-outer').classList.add('cmd-in');
+    document.getElementById('cmd-list-container').classList.add('cmd-in');
+    document.getElementById('footer').classList.add('cmd-in');
+    document.getElementById('header').classList.add('move-in');
+    document.getElementById('intro-msg-skip').style.display = 'none';
 
   },baseTime+10200)
-  setTimeout(function() {
+  introTimeouts[6] = setTimeout(function() {
     loadWelcome()
   },baseTime+11200)
+}
+
+function introAnimCancel() {
+  let introMsgs = document.getElementsByClassName('intro-msg');
+  for (var i=0; i<introTimeouts.length; i++) {
+    clearTimeout(introTimeouts[i]);
+  }
+  for (var j=0; j<introMsgs.length; j++) {
+    introMsgs[j].classList.remove('show');
+  }
+  document.getElementById('cmd-outer').classList.add('cmd-in');
+  document.getElementById('cmd-list-container').classList.add('cmd-in');
+  document.getElementById('footer').classList.add('cmd-in');
+  document.getElementById('header').classList.add('move-in');
+  document.getElementById('intro-msg-skip').style.display = 'none';
+  loadWelcome();
+
 }
 
 // FOCUS INPUT ON CLICK ANYWHERE
@@ -175,7 +199,7 @@ document.addEventListener('mousemove', function() {
 
 function loadWelcome() {
   // console.log(urlQuery.length + ' is urlQuery.length');
-  console.log('loadWelcome()');
+  cliInputFocus();
   urlString = window.location.toString();
 
   // IF NO URL QUERY, urlQuery WILL STILL = '';
@@ -204,672 +228,648 @@ function loadWelcome() {
 
 }
 
-  var cursor;
+var cursor;
 
-  for (i=0; i<sectionInnerDom.length; i++) {
-    sectionInnerDom[i].style.maxHeight = (theHeight/1.6);
+for (i=0; i<sectionInnerDom.length; i++) {
+  sectionInnerDom[i].style.maxHeight = (theHeight/1.6);
+}
+
+hideShowScrollArrows('top', 'none');
+
+// BACKSPACE LOGIC
+var backEnable = true;
+// document.addEventListener('keydown', function (e) {
+
+//   // (NOTE) NOT SURE IF CALLING THIS ON EVERY KEYDOWN IS A BAD MOVE
+//   cliInputFocus();
+
+// });
+
+// SCROLL .section-INNER ON UP & DOWN ARROW
+document.addEventListener('keydown', function (e) {
+
+  // SPACE KEY
+  if (e.which == 32) {
+    if (introAnimRunning) {
+      introAnimRunning = false;
+      introAnimCancel();
+    }
   }
 
-  hideShowScrollArrows('top', 'none');
+  // BACKSPACE KEY
+  if (e.which == 8) {
+    e.preventDefault();
 
-  // BACKSPACE LOGIC
-  var backEnable = true;
-  document.addEventListener('keydown', function (e) {
-
-    // (NOTE) NOT SURE IF CALLING THIS ON EVERY KEYDOWN IS A BAD MOVE
-    cliInputFocus();
-    // BACKSPACE KEY
-    if (e.which == 8) {
-      e.preventDefault();
-
-      if (backEnable) {
-        var cmdVal = cmdInputHiddenDom.value;
-        cmdInputHiddenDom.value = cmdVal.substring(0, cmdVal.length-1);
-        backEnable = false;
-      }
-      cmdInputHiddenDom.addEventListener('keyup', function(e) {
-        backEnable = true;
-      });
-
+    if (backEnable) {
+      var cmdVal = cmdInputHiddenDom.value;
+      cmdInputHiddenDom.value = cmdVal.substring(0, cmdVal.length-1);
+      backEnable = false;
     }
-
-  });
-
-  // SCROLL .section-INNER ON UP & DOWN ARROW
-  document.addEventListener('keydown', function (e) {
-
-    // KEY TAB
-    if (e.which == 9) {
-      e.preventDefault();
-    }
-
-    // KEY SHIFT
-    // if (e.which == 16) {
-    //   e.preventDefault();
-    //
-    //   cliInputFocus();
-    //
-    //   if (scrollShiftEnable) {
-    //     scrollShiftEnable = false;
-    //     scrollAmt = 16;
-    //   }
-    //
-    //   document.addEventListener('keyup', function(f) {
-    //     if (f.which == 16) {
-    //       f.preventDefault();
-    //
-    //       if (!scrollShiftEnable) {
-    //         scrollShiftEnable = true;
-    //
-    //         scrollAmt = 8;
-    //
-    //         cliInputFocus();
-    //
-    //         // var scrollDecel = setInterval( function() {
-    //         //   if (scrollAmt > 8 && scrollAmt !== 8) {
-    //         //     scrollAmt--;
-    //         //     console.log(scrollAmt + ' is scrollAmt');
-    //         //   }
-    //         //   else {
-    //         //     clearInterval(scrollDecel);
-    //         //     console.log('interval cleared');
-    //         //   }
-    //         // }, 70);
-    //
-    //       }
-    //     }
-    //   });
-    //
-    // }
-
-    // (NOTE) NEED DO DISABLE BOTH BELOW UNTIL KEYUP TO PREVENT MULTIPLE FIRES
-    // ARROW RIGHT FOR ARTICLES
-    else if (e.which == 39) {
-      e.preventDefault();
-
-      // cmdInputFigureDom = cmdInputIdDom.querySelectorAll('article');
-      // console.log(cmdInputIDName + ' cmdInputIDName');
-      // if (cmdInputFigureDom.length > 0) {
-        // for (i=0; i<cmdInputFigureDom.length + 1; i++) {
-        //   cmdInputIdDom.querySelectorAll('article')[i].style.display = 'none';
-        //   console.log('hiding figures on right key down');
-        // }
-        // cmdInputIdDom.querySelectorAll('article')[articleHeadingCount].style.display = 'table-cell';
-      // }
-
-      if (articleHeadingCount < cmdInputIdDom.querySelectorAll('h3').length - 1 && articleNextEnable) {
-
-        for ( i=0; i<sectionArticleNo; i++) {
-          cmdInputIdDom.getElementsByClassName('no-dot')[i].className = 'no-dot';
-        }
-        cmdInputIdDom.getElementsByClassName('no-dot')[articleHeadingCount + 1].className = 'no-dot no-dot-sel';
-
-        articleHeadingCount++;
-        articleNextEnable = false;
-
-        Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 });
-
-        Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
-
-      }
-
-      else if (articleNextEnable) {
-        articleNextEnable = false;
-        Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -30, easing: 'ease-out', duration: 100, axis: 'x', opacity: 1 });
-        Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-in', duration: 100, axis: 'x', opacity: 1 });
-      }
-
-      document.addEventListener('keyup', function(f) {
-        if (f.which == 39) {
-          if (!articleNextEnable) {
-            articleNextEnable = true;
-
-            for (i = 0; i < scrollBarMoveDom.length; i++) {
-              scrollBarMoveDom[i].style.top = '0px';
-            }
-
-            // scrollTopStartId = document.getElementById(cmdInputIDName);
-            // scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
-            // scrollTopStart = scrollTopStartClass.scrollTop;
-            //
-            // // (NOTE) DELAYED BY ONE INPUT EVENT
-            // // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
-            // scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
-            // var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
-            // for (i = 0; i < scrollBarMoveDom.length; i++) {
-            //   scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
-            // }
-
-          }
-        }
-      });
-
-    }
-
-    // ARROW LEFT FOR ARTICLES
-    else if (e.which == 37) {
-      e.preventDefault();
-
-      if (articleHeadingCount > 0 && articleNextEnable) {
-
-        for ( i=0; i<sectionArticleNo; i++) {
-          cmdInputIdDom.getElementsByClassName('no-dot')[i].className = 'no-dot';
-        }
-        cmdInputIdDom.getElementsByClassName('no-dot')[articleHeadingCount - 1].className = 'no-dot no-dot-sel';
-
-        articleHeadingCount--;
-        articleNextEnable = false;
-
-        Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 } );
-
-        Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
-
-        // cmdInputIdDom.getElementsByClassName('section-inner')[0].scrollTop = 0;
-
-      }
-
-      // (NOTE) NOT MOVING FOR SOME REASON, ROOM FOR PADDING OR SOMETHING
-      // else {
-      //   console.log('we"re going left');
-      //   Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -110, easing: 'ease-out', duration: 100, axis: 'x'} );
-      //   Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-in', duration: 100, axis: 'x'});
-      // }
-
-      document.addEventListener('keyup', function(f) {
-        if (f.which == 37) {
-          if (!articleNextEnable) {
-            articleNextEnable = true;
-
-            for (i = 0; i < scrollBarMoveDom.length; i++) {
-              scrollBarMoveDom[i].style.top = '0px';
-            }
-
-            // scrollTopStartId = document.getElementById(cmdInputIDName);
-            // scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
-            // scrollTopStart = scrollTopStartClass.scrollTop;
-            //
-            // // (NOTE) DELAYED BY ONE INPUT EVENT
-            // // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
-            // scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
-            // var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
-            // for (i = 0; i < scrollBarMoveDom.length; i++) {
-            //   scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
-            // }
-
-          }
-        }
-      });
-
-    }
-
-    // SCROLL DOWN
-    else if (e.which == 40) {
-
-      var scrollCallD;
-      var scrollTopPlus;
-
-      function scrollAnimD() {
-        scrollTopStartClass.scrollTop += scrollAmt;
-        scrollTopStart = scrollTopStartClass.scrollTop;
-        scrollNo++;
-
-        // KILL INSTRUCTIONS
-        if (scrollNo > 20) {
-          hideShowInstructionsScroll('none');
-        }
-
-        // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
-        scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
-        var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
-        for (i = 0; i < scrollBarMoveDom.length; i++) {
-          scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
-        }
-
-        scrollCallD = requestAnimationFrame(scrollAnimD);
-        // UPDATE W/ SCROLL
-        scrollTopPlus = scrollTopStartClass.scrollTop;
-        // SHOW TOP ARROW WHEN MOVE FROM TOP
-        if (scrollTopPlus > 0) {
-          hideShowScrollArrows('top', 'block');
-        }
-      }
-
-      // DISABLE SLEW OF KEYDOWN EVENTS, START SCROLL ANIM
-      if (downKeydownEnable) {
-        downKeydownEnable = false;
-        // SET SCROLL DOM IDENTIFIER ONCE PER DOWN KEYDOWN
-        scrollTopStartId = document.getElementById(cmdInputIDName);
-        scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
-        // scrollTopStart = scrollTopStartClass.scrollTop;
-
-        scrollCallD = requestAnimationFrame(scrollAnimD);
-
-      }
-
-      // if (blurEnable) {
-      //   for (var i=0; i<sectionInnerDom.length; i++) {
-      //     sectionInnerDom[i].style.opacity = scrollOpStart/10;
-      //   }
-      // }
-      // else {
-      //   for (var i=0; i<sectionInnerDom.length; i++) {
-      //     sectionInnerDom[i].style.opacity = 1;
-      //   }
-      // }
-      // if (scrollOpStart/20 > 0.9) {
-      //   scrollOpStart--;
-      // }
-
-      // ADD & REMOVE BLINKING CLASS - VANILLA JS
-      for (var i=0; i<scrollArrowsBotDom.length; i++) {
-        scrollArrowsBotDom[i].className = 'scroll-arrow-bot scroll-arrow-active-bot';
-      }
-      // LISTEN FOR DOWN RELEASE
-      document.addEventListener('keyup', function(f) {
-        if (f.which == 40) {
-          downKeydownEnable = true;
-
-          for (var i=0; i<scrollArrowsBotDom.length; i++) {
-            scrollArrowsBotDom[i].className = 'scroll-arrow-bot';
-          }
-          for (var i=0; i<sectionInnerDom.length; i++) {
-            sectionInnerDom[i].className = 'section-inner';
-            // sectionInnerDom[i].style.opacity = 1;
-          }
-          // STOP SCROLL ANIM
-          window.cancelAnimationFrame(scrollCallD);
-        }
-        // scrollOpStart = 20;
-      });
-
-      // IF SCROLL TO BOTTOM
-      if (scrollTopStart + scrollContainerHeight > sectionTotalHeight - 2) {
-        hideShowScrollArrows('bot', 'none');
-        // blurEnable = false;
-        sectionInnerDom[i].className = 'section-inner';
-        // console.log('we\'ve hit bottom of section');
-        // articleHeadingCount = cmdInputIdDom.querySelectorAll('h3').length - 1;
-      }
-      // else {
-      //   blurEnable = true;
-      // }
-
-    }
-    // SCROLL UP
-    else if (e.which == 38) {
-
-      var scrollCallU;
-      var scrollTopMinus;
-
-      function scrollAnimU() {
-        scrollTopStartClass.scrollTop -= scrollAmt;
-        scrollTopStart = scrollTopStartClass.scrollTop;
-        scrollNo++;
-        // KILL INSTRUCTIONS
-        if (scrollNo > 20) {
-          hideShowInstructionsScroll('none');
-        }
-
-        // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
-        scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
-        var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
-        for (i = 0; i < scrollBarMoveDom.length; i++) {
-          scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
-        }
-
-        scrollCallU = requestAnimationFrame(scrollAnimU);
-
-        // UPDATE W/ SCROLL
-        scrollTopMinus = scrollTopStartClass.scrollTop;
-        // GOES TO 0 WHEN AT TOP
-        if (scrollTopMinus < 3) {
-          hideShowScrollArrows('top', 'none');
-          // blurEnable = false;
-          // console.log('we\'ve hit top of section');
-          // articleHeadingCount = 0;
-        }
-      }
-
-      // RUN ONCE ON KEYDOWN IF ENABLED
-      if (upKeydownEnable) {
-        upKeydownEnable = false;
-        // SET SCROLL DOM IDENTIFIER ONCE PER UP KEYDOWN
-        scrollTopStartId = document.getElementById(cmdInputIDName);
-        scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
-
-        scrollCallU = requestAnimationFrame(scrollAnimU);
-      }
-
-      // PREVENT INCR IF ALREADY AT TOP
-      // if (scrollTopStart !== 0) {
-      //   blurEnable = true;
-      //   scrollNo++;
-      // }
-      // CHANGE OPACITY WHILE SCROLLING
-      // if (blurEnable) {
-      //   for (var i=0; i<sectionInnerDom.length; i++) {
-      //     sectionInnerDom[i].style.opacity = scrollOpStart/10;
-      //   }
-      // }
-      // else {
-      //   for (var i=0; i<sectionInnerDom.length; i++) {
-      //     sectionInnerDom[i].style.opacity = 1;
-      //   }
-      // }
-      // INC DOWN OPACITY
-      // if (scrollOpStart/20 > 0.9) {
-      //   scrollOpStart--;
-      // }
-
-      // ADD & REMOVE BLINKING CLASS - VANILLA JS
-      for (var i=0; i<scrollArrowsTopDom.length; i++) {
-        scrollArrowsTopDom[i].className = 'scroll-arrow-top scroll-arrow-active-top';
-      }
-
-      // LISTEN FOR UP KEY RELEASE
-      document.addEventListener('keyup', function(f) {
-        if (f.which == 38) {
-          upKeydownEnable = true;
-
-          for (var i=0; i<scrollArrowsTopDom.length; i++) {
-            scrollArrowsTopDom[i].className = 'scroll-arrow-top';
-          }
-          for (var i=0; i<sectionInnerDom.length; i++) {
-            sectionInnerDom[i].className = 'section-inner';
-            // sectionInnerDom[i].style.opacity = 1;
-          }
-          window.cancelAnimationFrame(scrollCallU);
-        }
-        // scrollOpStart = 20;
-      });
-
-      // DONT SHOW ARROW IF STUCK AT TOP B/C POST DOESN'T SCROLL
-      if (scrollBarHeightCalc < 100) {
-        hideShowScrollArrows('bot', 'block');
-      }
-
-    }
-    // SCROLL HOME, ONLY IF POST SCROLLS
-    else if (e.which == 36 && scrollBarHeightCalc < 100) {
-      e.preventDefault();
-
-      // articleHeadingCount = 0;
-      // INC scrollNo, IF NOT AT TOP ALREADY
-      var scrollTopStartId = document.getElementById(cmdInputIDName);
-      scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop = 0;
-
-      scrollNo += 5;
-      if (scrollNo > 20 && scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop !== 0) {
-        hideShowInstructionsScroll('none');
-      }
-      // MOVE SCROLL BAR
-      for (i = 0; i < scrollBarMoveDom.length; i++) {
-        scrollBarMoveDom[i].style.top = '0';
-      }
-      hideShowScrollArrows('bot', 'block');
-      hideShowScrollArrows('top', 'none');
-    }
-    // SCROLL END, ONLY IF POST SCROLLS
-    else if (e.which == 35 && scrollBarHeightCalc < 100) {
-      e.preventDefault();
-
-      // articleHeadingCount = cmdInputIdDom.querySelectorAll('h3').length - 1;
-      var scrollTopStartId = document.getElementById(cmdInputIDName);
-      scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop = sectionTotalHeight - scrollContainerHeight;
-
-      scrollNo += 5;
-      if (scrollNo > 20 && scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop !== sectionTotalHeight - scrollContainerHeight) {
-        hideShowInstructionsScroll('none');
-      }
-      // MOVE SCROLL BAR
-      for (i = 0; i < scrollBarMoveDom.length; i++) {
-        scrollBarMoveDom[i].style.top = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) + 'px';
-      }
-      hideShowScrollArrows('bot', 'none');
-      hideShowScrollArrows('top', 'block');
-    }
-  });
-
-  // BLOCK CURSOR CODE
-  cursor = window.setInterval(function() {
-    var cursorBlock = document.getElementById('cursor');
-    if (cursorBlock.style.visibility === 'visible') {
-      cursorBlock.style.visibility = 'hidden';
-    } else {
-      cursorBlock.style.visibility = 'visible';
-    }
-  }, 500);
-
-  // CHANGE UI W/ TAB
-  // (NOTE) MESSING UP CSS SCRUB VALUES/SYNC
-  // jQuery('html').keyup(function(e) {
-  document.addEventListener('keyup', function(e) {
-
-    cmdInputHiddenDom.addEventListener('keyup', function() {
-      document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = this.value;
+    cmdInputHiddenDom.addEventListener('keyup', function(e) {
+      backEnable = true;
     });
 
-    if (e.which === 9) {
-      e.preventDefault();
-    }
+  }
 
-  });
 
-  // (NOTE) NEED TO DISABLE 'BACKPACE' AS BROWSER BACK, BUT KEEP ON INPUT FIELD
 
-  document.querySelector('html').addEventListener('keydown', function (e) {
-    // DISABLE CMD (17) KEY
-    // (NOTE) NEED TO DISABLE IF WHEN BOTTOM ??
-    // if (e.which == 17) {
-    //   e.preventDefault();
+  // KEY TAB
+  if (e.which == 9) {
+    e.preventDefault();
+  }
+
+  // KEY SHIFT
+  // if (e.which == 16) {
+  //   e.preventDefault();
+  //
+  //   cliInputFocus();
+  //
+  //   if (scrollShiftEnable) {
+  //     scrollShiftEnable = false;
+  //     scrollAmt = 16;
+  //   }
+  //
+  //   document.addEventListener('keyup', function(f) {
+  //     if (f.which == 16) {
+  //       f.preventDefault();
+  //
+  //       if (!scrollShiftEnable) {
+  //         scrollShiftEnable = true;
+  //
+  //         scrollAmt = 8;
+  //
+  //         cliInputFocus();
+  //
+  //         // var scrollDecel = setInterval( function() {
+  //         //   if (scrollAmt > 8 && scrollAmt !== 8) {
+  //         //     scrollAmt--;
+  //         //     console.log(scrollAmt + ' is scrollAmt');
+  //         //   }
+  //         //   else {
+  //         //     clearInterval(scrollDecel);
+  //         //     console.log('interval cleared');
+  //         //   }
+  //         // }, 70);
+  //
+  //       }
+  //     }
+  //   });
+  //
+  // }
+
+  // (NOTE) NEED DO DISABLE BOTH BELOW UNTIL KEYUP TO PREVENT MULTIPLE FIRES
+  // ARROW RIGHT FOR ARTICLES
+  else if (e.which == 39) {
+    e.preventDefault();
+
+    // cmdInputFigureDom = cmdInputIdDom.querySelectorAll('article');
+    // console.log(cmdInputIDName + ' cmdInputIDName');
+    // if (cmdInputFigureDom.length > 0) {
+      // for (i=0; i<cmdInputFigureDom.length + 1; i++) {
+      //   cmdInputIdDom.querySelectorAll('article')[i].style.display = 'none';
+      //   console.log('hiding figures on right key down');
+      // }
+      // cmdInputIdDom.querySelectorAll('article')[articleHeadingCount].style.display = 'table-cell';
     // }
-  });
 
-  // FOCUS INPUT ON 'TAB'
-  document.addEventListener('keyup', function(e) {
-    if (e.which === 9) {
-      cliInputFocus();
-      console.log('TAB focus');
+    if (articleHeadingCount < cmdInputIdDom.querySelectorAll('h3').length - 1 && articleNextEnable) {
+
+      for ( i=0; i<sectionArticleNo; i++) {
+        cmdInputIdDom.getElementsByClassName('no-dot')[i].className = 'no-dot';
+      }
+      cmdInputIdDom.getElementsByClassName('no-dot')[articleHeadingCount + 1].className = 'no-dot no-dot-sel';
+
+      articleHeadingCount++;
+      articleNextEnable = false;
+
+      Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 });
+
+      Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
+
     }
+
+    else if (articleNextEnable) {
+      articleNextEnable = false;
+      Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -30, easing: 'ease-out', duration: 100, axis: 'x', opacity: 1 });
+      Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-in', duration: 100, axis: 'x', opacity: 1 });
+    }
+
+    document.addEventListener('keyup', function(f) {
+      if (f.which == 39) {
+        if (!articleNextEnable) {
+          articleNextEnable = true;
+
+          for (i = 0; i < scrollBarMoveDom.length; i++) {
+            scrollBarMoveDom[i].style.top = '0px';
+          }
+
+          // scrollTopStartId = document.getElementById(cmdInputIDName);
+          // scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
+          // scrollTopStart = scrollTopStartClass.scrollTop;
+          //
+          // // (NOTE) DELAYED BY ONE INPUT EVENT
+          // // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
+          // scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
+          // var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
+          // for (i = 0; i < scrollBarMoveDom.length; i++) {
+          //   scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
+          // }
+
+        }
+      }
+    });
+
+  }
+
+  // ARROW LEFT FOR ARTICLES
+  else if (e.which == 37) {
+    e.preventDefault();
+
+    if (articleHeadingCount > 0 && articleNextEnable) {
+
+      for ( i=0; i<sectionArticleNo; i++) {
+        cmdInputIdDom.getElementsByClassName('no-dot')[i].className = 'no-dot';
+      }
+      cmdInputIdDom.getElementsByClassName('no-dot')[articleHeadingCount - 1].className = 'no-dot no-dot-sel';
+
+      articleHeadingCount--;
+      articleNextEnable = false;
+
+      Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 } );
+
+      Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
+
+      // cmdInputIdDom.getElementsByClassName('section-inner')[0].scrollTop = 0;
+
+    }
+
+    // (NOTE) NOT MOVING FOR SOME REASON, ROOM FOR PADDING OR SOMETHING
+    // else {
+    //   console.log('we"re going left');
+    //   Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -110, easing: 'ease-out', duration: 100, axis: 'x'} );
+    //   Velocity(cmdInputIdDom.querySelectorAll('article')[0],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-in', duration: 100, axis: 'x'});
+    // }
+
+    document.addEventListener('keyup', function(f) {
+      if (f.which == 37) {
+        if (!articleNextEnable) {
+          articleNextEnable = true;
+
+          for (i = 0; i < scrollBarMoveDom.length; i++) {
+            scrollBarMoveDom[i].style.top = '0px';
+          }
+
+          // scrollTopStartId = document.getElementById(cmdInputIDName);
+          // scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
+          // scrollTopStart = scrollTopStartClass.scrollTop;
+          //
+          // // (NOTE) DELAYED BY ONE INPUT EVENT
+          // // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
+          // scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
+          // var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
+          // for (i = 0; i < scrollBarMoveDom.length; i++) {
+          //   scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
+          // }
+
+        }
+      }
+    });
+
+  }
+
+  // SCROLL DOWN
+  else if (e.which == 40) {
+
+    var scrollCallD;
+    var scrollTopPlus;
+
+    function scrollAnimD() {
+      scrollTopStartClass.scrollTop += scrollAmt;
+      scrollTopStart = scrollTopStartClass.scrollTop;
+      scrollNo++;
+
+      // KILL INSTRUCTIONS
+      if (scrollNo > 20) {
+        hideShowInstructionsScroll('none');
+      }
+
+      // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
+      scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
+      var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
+      for (i = 0; i < scrollBarMoveDom.length; i++) {
+        scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
+      }
+
+      scrollCallD = requestAnimationFrame(scrollAnimD);
+      // UPDATE W/ SCROLL
+      scrollTopPlus = scrollTopStartClass.scrollTop;
+      // SHOW TOP ARROW WHEN MOVE FROM TOP
+      if (scrollTopPlus > 0) {
+        hideShowScrollArrows('top', 'block');
+      }
+    }
+
+    // DISABLE SLEW OF KEYDOWN EVENTS, START SCROLL ANIM
+    if (downKeydownEnable) {
+      downKeydownEnable = false;
+      // SET SCROLL DOM IDENTIFIER ONCE PER DOWN KEYDOWN
+      scrollTopStartId = document.getElementById(cmdInputIDName);
+      scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
+      // scrollTopStart = scrollTopStartClass.scrollTop;
+
+      scrollCallD = requestAnimationFrame(scrollAnimD);
+
+    }
+
+    // if (blurEnable) {
+    //   for (var i=0; i<sectionInnerDom.length; i++) {
+    //     sectionInnerDom[i].style.opacity = scrollOpStart/10;
+    //   }
+    // }
+    // else {
+    //   for (var i=0; i<sectionInnerDom.length; i++) {
+    //     sectionInnerDom[i].style.opacity = 1;
+    //   }
+    // }
+    // if (scrollOpStart/20 > 0.9) {
+    //   scrollOpStart--;
+    // }
+
+    // ADD & REMOVE BLINKING CLASS - VANILLA JS
+    for (var i=0; i<scrollArrowsBotDom.length; i++) {
+      scrollArrowsBotDom[i].className = 'scroll-arrow-bot scroll-arrow-active-bot';
+    }
+    // LISTEN FOR DOWN RELEASE
+    document.addEventListener('keyup', function(f) {
+      if (f.which == 40) {
+        downKeydownEnable = true;
+
+        for (var i=0; i<scrollArrowsBotDom.length; i++) {
+          scrollArrowsBotDom[i].className = 'scroll-arrow-bot';
+        }
+        for (var i=0; i<sectionInnerDom.length; i++) {
+          sectionInnerDom[i].className = 'section-inner';
+          // sectionInnerDom[i].style.opacity = 1;
+        }
+        // STOP SCROLL ANIM
+        window.cancelAnimationFrame(scrollCallD);
+      }
+      // scrollOpStart = 20;
+    });
+
+    // IF SCROLL TO BOTTOM
+    if (scrollTopStart + scrollContainerHeight > sectionTotalHeight - 2) {
+      hideShowScrollArrows('bot', 'none');
+      // blurEnable = false;
+      sectionInnerDom[i].className = 'section-inner';
+      // console.log('we\'ve hit bottom of section');
+      // articleHeadingCount = cmdInputIdDom.querySelectorAll('h3').length - 1;
+    }
+    // else {
+    //   blurEnable = true;
+    // }
+
+  }
+  // SCROLL UP
+  else if (e.which == 38) {
+
+    var scrollCallU;
+    var scrollTopMinus;
+
+    function scrollAnimU() {
+      scrollTopStartClass.scrollTop -= scrollAmt;
+      scrollTopStart = scrollTopStartClass.scrollTop;
+      scrollNo++;
+      // KILL INSTRUCTIONS
+      if (scrollNo > 20) {
+        hideShowInstructionsScroll('none');
+      }
+
+      // SCROLL BAR MOVE BY CALCULATE DISTANCE SCROLLED AS PERCENT
+      scrollDistCalc = scrollTopStart / (sectionTotalHeight - scrollContainerHeight);
+      var scrollDistPx = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) * scrollDistCalc;
+      for (i = 0; i < scrollBarMoveDom.length; i++) {
+        scrollBarMoveDom[i].style.top = scrollDistPx + 'px';
+      }
+
+      scrollCallU = requestAnimationFrame(scrollAnimU);
+
+      // UPDATE W/ SCROLL
+      scrollTopMinus = scrollTopStartClass.scrollTop;
+      // GOES TO 0 WHEN AT TOP
+      if (scrollTopMinus < 3) {
+        hideShowScrollArrows('top', 'none');
+        // blurEnable = false;
+        // console.log('we\'ve hit top of section');
+        // articleHeadingCount = 0;
+      }
+    }
+
+    // RUN ONCE ON KEYDOWN IF ENABLED
+    if (upKeydownEnable) {
+      upKeydownEnable = false;
+      // SET SCROLL DOM IDENTIFIER ONCE PER UP KEYDOWN
+      scrollTopStartId = document.getElementById(cmdInputIDName);
+      scrollTopStartClass = scrollTopStartId.getElementsByClassName('section-inner')[0];
+
+      scrollCallU = requestAnimationFrame(scrollAnimU);
+    }
+
+    // PREVENT INCR IF ALREADY AT TOP
+    // if (scrollTopStart !== 0) {
+    //   blurEnable = true;
+    //   scrollNo++;
+    // }
+    // CHANGE OPACITY WHILE SCROLLING
+    // if (blurEnable) {
+    //   for (var i=0; i<sectionInnerDom.length; i++) {
+    //     sectionInnerDom[i].style.opacity = scrollOpStart/10;
+    //   }
+    // }
+    // else {
+    //   for (var i=0; i<sectionInnerDom.length; i++) {
+    //     sectionInnerDom[i].style.opacity = 1;
+    //   }
+    // }
+    // INC DOWN OPACITY
+    // if (scrollOpStart/20 > 0.9) {
+    //   scrollOpStart--;
+    // }
+
+    // ADD & REMOVE BLINKING CLASS - VANILLA JS
+    for (var i=0; i<scrollArrowsTopDom.length; i++) {
+      scrollArrowsTopDom[i].className = 'scroll-arrow-top scroll-arrow-active-top';
+    }
+
+    // LISTEN FOR UP KEY RELEASE
+    document.addEventListener('keyup', function(f) {
+      if (f.which == 38) {
+        upKeydownEnable = true;
+
+        for (var i=0; i<scrollArrowsTopDom.length; i++) {
+          scrollArrowsTopDom[i].className = 'scroll-arrow-top';
+        }
+        for (var i=0; i<sectionInnerDom.length; i++) {
+          sectionInnerDom[i].className = 'section-inner';
+          // sectionInnerDom[i].style.opacity = 1;
+        }
+        window.cancelAnimationFrame(scrollCallU);
+      }
+      // scrollOpStart = 20;
+    });
+
+    // DONT SHOW ARROW IF STUCK AT TOP B/C POST DOESN'T SCROLL
+    if (scrollBarHeightCalc < 100) {
+      hideShowScrollArrows('bot', 'block');
+    }
+
+  }
+  // SCROLL HOME, ONLY IF POST SCROLLS
+  else if (e.which == 36 && scrollBarHeightCalc < 100) {
+    e.preventDefault();
+
+    // articleHeadingCount = 0;
+    // INC scrollNo, IF NOT AT TOP ALREADY
+    var scrollTopStartId = document.getElementById(cmdInputIDName);
+    scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop = 0;
+
+    scrollNo += 5;
+    if (scrollNo > 20 && scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop !== 0) {
+      hideShowInstructionsScroll('none');
+    }
+    // MOVE SCROLL BAR
+    for (i = 0; i < scrollBarMoveDom.length; i++) {
+      scrollBarMoveDom[i].style.top = '0';
+    }
+    hideShowScrollArrows('bot', 'block');
+    hideShowScrollArrows('top', 'none');
+  }
+  // SCROLL END, ONLY IF POST SCROLLS
+  else if (e.which == 35 && scrollBarHeightCalc < 100) {
+    e.preventDefault();
+
+    // articleHeadingCount = cmdInputIdDom.querySelectorAll('h3').length - 1;
+    var scrollTopStartId = document.getElementById(cmdInputIDName);
+    scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop = sectionTotalHeight - scrollContainerHeight;
+
+    scrollNo += 5;
+    if (scrollNo > 20 && scrollTopStartId.getElementsByClassName('section-inner')[0].scrollTop !== sectionTotalHeight - scrollContainerHeight) {
+      hideShowInstructionsScroll('none');
+    }
+    // MOVE SCROLL BAR
+    for (i = 0; i < scrollBarMoveDom.length; i++) {
+      scrollBarMoveDom[i].style.top = (scrollContainerHeight + sectionPadTopAndBot - scrollBarRenderHeightPx) + 'px';
+    }
+    hideShowScrollArrows('bot', 'none');
+    hideShowScrollArrows('top', 'block');
+  }
+});
+
+// BLOCK CURSOR CODE
+cursor = window.setInterval(function() {
+  var cursorBlock = document.getElementById('cursor');
+  if (cursorBlock.style.visibility === 'visible') {
+    cursorBlock.style.visibility = 'hidden';
+  } else {
+    cursorBlock.style.visibility = 'visible';
+  }
+}, 500);
+
+// CHANGE UI W/ TAB
+// (NOTE) MESSING UP CSS SCRUB VALUES/SYNC
+// jQuery('html').keyup(function(e) {
+document.addEventListener('keyup', function(e) {
+
+  cmdInputHiddenDom.addEventListener('keyup', function() {
+    document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = this.value;
   });
 
-  // RUN ON KEYUP, IF ELSES, ADD TXT TO CMD LIST, cmdCheck();
-  cmdInputHiddenDom.addEventListener('keyup', function(e) {
+  if (e.which === 9) {
+    e.preventDefault();
+  }
 
-      // CACHE INPUT, CONVERT TO LOWER CASE
-      cmdInput = document.getElementById("cmd-input-hidden").value.toLowerCase();
+});
 
-      // IF KEY IS ENTER
-      if(e.keyCode === 13 &&  cmdInput !== "" && cmdInput) {
+// (NOTE) NEED TO DISABLE 'BACKPACE' AS BROWSER BACK, BUT KEEP ON INPUT FIELD
 
-        if ( cmdInput === cmdPrev ) {
-          cmdClear();
-        }
-        // LAUNCH FULLSCREEN
-        else if(cmdInput === "fullscreen") {
-          // launchIntoFullscreen(document.documentElement);
-          cmdListDom.innerHTML = cmdListUpdate + "&nbsp; > FULLSCREEN<br><br>";
-          cmdClear();
-          // window.location += '?cmd=fullscreen';
-          document.getElementById('full-confirm').style.display = 'block';
-        }
-        else if(cmdInput === "curse") {
-          // LETS CREATE A RANDOM CURSE WORD
-          var randCurse = cmdArrayCurseWords[Math.floor(Math.random() * cmdArrayCurseWords.length)];
-          cmdListUpdate = '';
-          cmdListUpdate = randCurse + '<br><br>';
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-        }
-        else if(cmdInput === "clear") {
-          cmdListUpdate = "";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-        }
-        // IF IS MENU ITEMS
-        else if(cmdArrayMenuItems.indexOf(cmdInput) > -1) {
+document.querySelector('html').addEventListener('keydown', function (e) {
+  // DISABLE CMD (17) KEY
+  // (NOTE) NEED TO DISABLE IF WHEN BOTTOM ??
+  // if (e.which == 17) {
+  //   e.preventDefault();
+  // }
+});
 
-          cmdCheck(cmdInput, 400);
-          // ENTER INTO CMD LIST
-          cmdListUpdate += "> " + cmdInput + "<br><br>";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-        }
-        // LIST ALL
-        else if(cmdInput === "ls" || cmdInput === "dir" || cmdInput === "ls -al" || cmdInput === "ls -alt") {
+// FOCUS INPUT ON 'TAB'
+document.addEventListener('keyup', function(e) {
+  if (e.which === 9) {
+    cliInputFocus();
+    console.log('TAB focus');
+  }
+});
 
-          // (NOTE) CHANGE TO FOR LOOP, ITER THROUGH ARRAY
-          cmdListUpdate += "> " + cmdInput + "<br><br>" + "&nbsp; > DEV<br>" + "&nbsp; > ART<br>" + "&nbsp; > ABOUT<br>" + "&nbsp; > SKILLS<br>" + "&nbsp; > LINKS<br>" + "&nbsp; > RESUME<br>" + "<br>";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-          cmdCheck("ls", 400);
+// RUN ON KEYUP, IF ELSES, ADD TXT TO CMD LIST, cmdCheck();
+cmdInputHiddenDom.addEventListener('keyup', function(e) {
 
-        }
-        // CURSE WORDS
-        else if(cmdArrayCurseWords.indexOf(cmdInput) > -1) {
+    // CACHE INPUT, CONVERT TO LOWER CASE
+    cmdInput = document.getElementById("cmd-input-hidden").value.toLowerCase();
 
-          cmdListUpdate += "> " + cmdInput + "<br><br>";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-          cmdCheck("curse", 400);
+    // IF KEY IS ENTER
+    if(e.keyCode === 13 &&  cmdInput !== "" && cmdInput) {
 
-        }
-        // GREETING
-        else if (cmdInput === "hi" || cmdInput === "hello" || cmdInput === "enter") {
+      if ( cmdInput === cmdPrev ) {
+        cmdClear();
+      }
+      // LAUNCH FULLSCREEN
+      else if(cmdInput === "fullscreen") {
+        // launchIntoFullscreen(document.documentElement);
+        cmdListDom.innerHTML = cmdListUpdate + "&nbsp; > FULLSCREEN<br><br>";
+        cmdClear();
+        // window.location += '?cmd=fullscreen';
+        document.getElementById('full-confirm').style.display = 'block';
+      }
+      else if(cmdInput === "curse") {
+        // LETS CREATE A RANDOM CURSE WORD
+        var randCurse = cmdArrayCurseWords[Math.floor(Math.random() * cmdArrayCurseWords.length)];
+        cmdListUpdate = '';
+        cmdListUpdate = randCurse + '<br><br>';
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+      }
+      else if(cmdInput === "clear") {
+        cmdListUpdate = "";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+      }
+      // IF IS MENU ITEMS
+      else if(cmdArrayMenuItems.indexOf(cmdInput) > -1) {
 
-          cmdListUpdate += "> " + cmdInput + "<br><br>";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-          cmdCheck("confused", 400);
+        cmdCheck(cmdInput, 400);
+        // ENTER INTO CMD LIST
+        cmdListUpdate += "> " + cmdInput + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+      }
+      // LIST ALL
+      else if(cmdInput === "ls" || cmdInput === "dir" || cmdInput === "ls -al" || cmdInput === "ls -alt") {
 
-        }
+        // (NOTE) CHANGE TO FOR LOOP, ITER THROUGH ARRAY
+        cmdListUpdate += "> " + cmdInput + "<br><br>" + "&nbsp; > DEV<br>" + "&nbsp; > ART<br>" + "&nbsp; > ABOUT<br>" + "&nbsp; > SKILLS<br>" + "&nbsp; > LINKS<br>" + "&nbsp; > RESUME<br>" + "<br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+        cmdCheck("ls", 400);
 
-        // BACK
-        else if (cmdInput === 'back') {
+      }
+      // CURSE WORDS
+      else if(cmdArrayCurseWords.indexOf(cmdInput) > -1) {
 
-          cmdCheck(cmdPrevArray[(cmdPrevArray.length-2)], 400);
-          cmdClear();
+        cmdListUpdate += "> " + cmdInput + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+        cmdCheck("curse", 400);
 
-          // ENTER INTO CMD LIST
-          cmdListUpdate += "> " + cmdInput + "<br><br>";
-          cmdListDom.innerHTML = cmdListUpdate;
+      }
+      // GREETING
+      else if (cmdInput === "hi" || cmdInput === "hello" || cmdInput === "enter") {
 
-        }
-
-
-        // HELP, HOME
-        else if (cmdArrayHome.indexOf(cmdInput) > -1) {
-
-          cmdCheck("home", 400);
-          cmdClear();
-          // document.getElementById('header-nav').innerHTML = 'HOME';
-
-          // ENTER INTO CMD LIST
-          cmdListUpdate = "";
-          cmdListDom.innerHTML = startHelpInfo + "<br><br>" + "> " + cmdInput;
-
-        }
-        else if (cmdInput.indexOf('go') > -1) {
-          if (cmdInput === "go twitter") {
-            location.href = "http://www.twitter.com/ngpfontaine";
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if(cmdInput === "go resume") {
-            location.href = "http://nicfontaine.com/images/nf_resume_01_20160402.pdf";
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go 3midesign') {
-            location.href = 'https://nicfontaine.com/sites/3mi';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go silvermuse') {
-            location.href = 'http://silvermuse.net';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go ihl') {
-            location.href = 'http://www.ianhaneylopez.com';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go thalia') {
-            location.href = 'https://thaliamae.com';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go nic2013') {
-            location.href = 'https://nicfontaine.com/sites/2013';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go gforms') {
-            location.href = 'https://github.com/ngpfontaine/gfv';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go github') {
-            location.href = 'https://github.com/ngpfontaine';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go turtlelinks') {
-            location.href = 'https://www.youtube.com/watch?v=ojJFZF8tUSM';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go bunkerblast') {
-            location.href = 'https://vimeo.com/162212564';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go vimeo') {
-            location.href = 'https://vimeo.com/ngpfontaine';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go start') {
-            location.href = 'https://github.com/ngpfontaine/start';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-          else if (cmdInput === 'go clpsm') {
-            location.href = 'https://github.com/ngpfontaine/clpsm';
-            cmdListUpdate += "> " + cmdInput + "<br><br>";
-            cmdListDom.innerHTML = cmdListUpdate;
-            cmdClear();
-          }
-
-        }
-        // ERROR COMMAND
-        else {
-
-          cmdListUpdate += "> " + cmdInput + " - [ error ]" + "<br><br>";
-          cmdListDom.innerHTML = cmdListUpdate;
-          cmdClear();
-          cmdCheck("else", 400);
-          document.getElementById('cmd-error-in-post').innerHTML = " " + cmdInput + " ";
-
-        }
+        cmdListUpdate += "> " + cmdInput + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+        cmdCheck("confused", 400);
 
       }
 
-  });
+      // BACK
+      else if (cmdInput === 'back') {
+
+        cmdCheck(cmdPrevArray[(cmdPrevArray.length-2)], 400);
+        cmdClear();
+
+        // ENTER INTO CMD LIST
+        cmdListUpdate += "> " + cmdInput + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+
+      }
+
+
+      // HELP, HOME
+      else if (cmdArrayHome.indexOf(cmdInput) > -1) {
+
+        cmdCheck("home", 400);
+        cmdClear();
+        // document.getElementById('header-nav').innerHTML = 'HOME';
+
+        // ENTER INTO CMD LIST
+        cmdListUpdate = "";
+        cmdListDom.innerHTML = startHelpInfo + "<br><br>" + "> " + cmdInput;
+
+      }
+      else if (cmdInput.indexOf('go') > -1) {
+        if (cmdInput === "go twitter") {
+          location.href = "http://www.twitter.com/ngpfontaine";
+        }
+        else if(cmdInput === "go resume") {
+          location.href = "http://nicfontaine.com/images/nf_resume_01_20160402.pdf";
+        }
+        else if (cmdInput === 'go 3midesign') {
+          location.href = 'https://nicfontaine.com/sites/3mi';
+        }
+        else if (cmdInput === 'go silvermuse') {
+          location.href = 'http://silvermuse.net';
+        }
+        else if (cmdInput === 'go ihl') {
+          location.href = 'http://www.ianhaneylopez.com';
+        }
+        else if (cmdInput === 'go metro') {
+          location.href = 'https://nicfontaine.com/metrognome';
+        }
+        else if (cmdInput === 'go thalia') {
+          location.href = 'https://thaliamae.com';
+        }
+        else if (cmdInput === 'go nic2013') {
+          location.href = 'https://nicfontaine.com/sites/2013';
+        }
+        else if (cmdInput === 'go gforms') {
+          location.href = 'https://github.com/ngpfontaine/gfv';
+        }
+        else if (cmdInput === 'go github') {
+          location.href = 'https://github.com/ngpfontaine';
+        }
+        else if (cmdInput === 'go turtlelinks') {
+          location.href = 'https://www.youtube.com/watch?v=ojJFZF8tUSM';
+        }
+        else if (cmdInput === 'go bunkerblast') {
+          location.href = 'https://vimeo.com/162212564';
+        }
+        else if (cmdInput === 'go vimeo') {
+          location.href = 'https://vimeo.com/ngpfontaine';
+        }
+        else if (cmdInput === 'go start') {
+          location.href = 'https://github.com/ngpfontaine/start';
+        }
+        else if (cmdInput === 'go clpsm') {
+          location.href = 'https://github.com/ngpfontaine/clpsm';
+        }
+
+        cmdListUpdate += "> " + cmdInput + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+
+      }
+      // ERROR COMMAND
+      else {
+
+        cmdListUpdate += "> " + cmdInput + " - [ error ]" + "<br><br>";
+        cmdListDom.innerHTML = cmdListUpdate;
+        cmdClear();
+        cmdCheck("else", 400);
+        document.getElementById('cmd-error-in-post').innerHTML = " " + cmdInput + " ";
+
+      }
+
+    }
+
+});
 
 //}(jQuery));
 

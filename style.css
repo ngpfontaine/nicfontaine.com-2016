@@ -122,6 +122,20 @@ iframe {
   transform: translateY(-60%);
 }
 
+.intro-skip {
+  position: fixed;
+  right: 0; left: 0;
+  transform: translateY(-50%);
+  bottom: 30px;
+  font-size: 0.75em;
+  word-spacing: 7px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  z-index: 5;
+
+}
+
 #user-id {
   font-family: 'Anonymous-Pro', courier, monospace;
   font-weight: 700;
