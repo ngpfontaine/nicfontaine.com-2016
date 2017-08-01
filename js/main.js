@@ -180,7 +180,7 @@ function introAnimCancel() {
   document.getElementById('header').classList.add('move-in');
   document.getElementById('intro-msg-skip').style.display = 'none';
   loadWelcome();
-
+  cmdClear();
 }
 
 // FOCUS INPUT ON CLICK ANYWHERE
@@ -238,12 +238,6 @@ hideShowScrollArrows('top', 'none');
 
 // BACKSPACE LOGIC
 var backEnable = true;
-// document.addEventListener('keydown', function (e) {
-
-//   // (NOTE) NOT SURE IF CALLING THIS ON EVERY KEYDOWN IS A BAD MOVE
-//   cliInputFocus();
-
-// });
 
 // SCROLL .section-INNER ON UP & DOWN ARROW
 document.addEventListener('keydown', function (e) {
@@ -692,13 +686,13 @@ document.addEventListener('keyup', function(e) {
 
 // (NOTE) NEED TO DISABLE 'BACKPACE' AS BROWSER BACK, BUT KEEP ON INPUT FIELD
 
-document.querySelector('html').addEventListener('keydown', function (e) {
+// document.querySelector('html').addEventListener('keydown', function (e) {
   // DISABLE CMD (17) KEY
   // (NOTE) NEED TO DISABLE IF WHEN BOTTOM ??
   // if (e.which == 17) {
   //   e.preventDefault();
   // }
-});
+// });
 
 // FOCUS INPUT ON 'TAB'
 document.addEventListener('keyup', function(e) {
