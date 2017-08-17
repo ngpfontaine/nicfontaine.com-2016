@@ -127,6 +127,7 @@ window.onload = function() {
 
 var introTimeouts = [];
 var introAnimRunning = true;
+var postLoad = false;
 
 function introAnimation() {
   const baseTime = 100
@@ -163,6 +164,7 @@ function introAnimation() {
   },baseTime+10200)
   introTimeouts[6] = setTimeout(function() {
     loadWelcome()
+    postLoad = true;
   },baseTime+11200)
 }
 
@@ -219,8 +221,11 @@ function loadWelcome() {
   // urlQuery IS UNDEFINED, I.E. BLANK
   else {
     console.log('no urlQuery, running "home"');
+    cmdClear();
     setTimeout(function() {
       cmdCheck('home', 1300);
+      postLoad = true;
+      cmdClear();
     }, 1000);
   }
 
@@ -675,7 +680,12 @@ cursor = window.setInterval(function() {
 document.addEventListener('keyup', function(e) {
 
   cmdInputHiddenDom.addEventListener('keyup', function() {
-    document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = this.value;
+    // disable if before load sequence
+    // if (postLoad) {
+      document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = this.value;
+    // } else {
+      // cmdClear();
+    // }
   });
 
   if (e.which === 9) {
@@ -706,7 +716,9 @@ document.addEventListener('keyup', function(e) {
 cmdInputHiddenDom.addEventListener('keyup', function(e) {
 
     // CACHE INPUT, CONVERT TO LOWER CASE
-    cmdInput = document.getElementById("cmd-input-hidden").value.toLowerCase();
+    if (postLoad) {
+      cmdInput = document.getElementById("cmd-input-hidden").value.toLowerCase();
+    }
 
     // IF KEY IS ENTER
     if(e.keyCode === 13 &&  cmdInput !== "" && cmdInput) {
@@ -895,7 +907,6 @@ function cmdCheck(x, y) {
   else {
     // history.replaceState(undefined, undefined, urlSearchChar + x);
     document.location = urlClean + urlSearchChar + x;
-    console.log('running else!!');
     // REMOVE HASH FROM HISTORY, TO SAVE BROWSER FUNCTIONALITY
   }
 
@@ -948,6 +959,8 @@ function cmdCheck(x, y) {
     }
     // SET FIRST DOT HIGHLIGHT
     cmdInputIdDom.getElementsByClassName('no-dot')[0].className = 'no-dot no-dot-sel';
+
+    cmdClear();
   }
   // else {
   //   cmdInputIdDom.
