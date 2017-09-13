@@ -100,10 +100,15 @@ iframe {
 
 /*COLOR SCRUBS*/
 
-/*INTRO MESSAGES*/
-.intro-msg {
+.intro {
   opacity: 0;
   transition: all 0.5s ease-out;
+  z-index: 5;
+}
+
+/*INTRO MESSAGES*/
+
+.intro-msg {
   position: fixed;
   right: 0; left: 0;
   top: 50%;
@@ -111,14 +116,16 @@ iframe {
   font-size: 2.5em;
   color: rgba(255,255,255,0.8);
   text-align: center;
-  z-index: 5;
   background: rgba(0,0,0,0.15);
   padding: 20px;
   box-sizing: border-box;
 }
 
-.intro-msg.show {
+.intro.show {
   opacity: 1;
+}
+
+.intro.show.move {
   transform: translateY(-60%);
 }
 
@@ -126,14 +133,38 @@ iframe {
   position: fixed;
   right: 0; left: 0;
   transform: translateY(-50%);
-  bottom: 30px;
+  bottom: 60px;
   font-size: 0.75em;
   word-spacing: 7px;
   letter-spacing: 2px;
   color: rgba(255,255,255,0.3);
   text-align: center;
-  z-index: 5;
+}
 
+.intro-bar-container {
+  position: fixed;
+  bottom: 30px;
+  right: 0; left: 0;
+  margin: 0 auto;
+  height: 3px;
+  width: 70%;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.intro-bar {
+  position: absolute;
+  bottom: 0; top: 0;
+  right: 0; left: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.02);
+}
+
+#intro-bar-move {
+ background: rgba(255,255,255,0.15);
+ transform: translateX(-100%);
 }
 
 #user-id {

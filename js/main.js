@@ -22,7 +22,6 @@ var urlQuery = '';
 // CHECK URL QUERY AND RUN cmdCheck()
 // var urlString = window.location.toString();
 var urlString = '';
-// console.log(urlString.split(urlSearchChar)[1] + ' is urlQuery');
 
 // WRITE CURRENT YEAR
 var year = new Date().getFullYear();
@@ -131,36 +130,88 @@ var postLoad = false;
 
 function introAnimation() {
   const baseTime = 100
+  const intro = {
+    userId: document.getElementById('user-id'),
+    skip: document.getElementById('intro-msg-skip'),
+    m01: document.getElementById('intro-msg-01'),
+    m02: document.getElementById('intro-msg-02'),
+    m03: document.getElementById('intro-msg-03'),
+    barBg: document.getElementById('intro-bar-bg'),
+    barMove: document.getElementById('intro-bar-move')
+  }
+
+  // calc intro bar
+  const bar = {
+    w: intro.barMove.clientWidth,
+    fps: 30,
+    raf: undefined,
+    move: undefined,
+    flag: true
+  }
+
+  var now
+  var then = Date.now()
+  const interval = 1000/bar.fps
+  var delta
+
+  bar.rate = (bar.w/(baseTime+9900)/bar.fps)*1000
+  bar.move = bar.w-bar.rate
+  function barMove() {
+
+    now = Date.now()
+    delta = now - then
+
+    if (bar.flag) {
+      bar.raf = requestAnimationFrame(barMove)
+      if (delta > interval) { 
+        then = now - (delta % interval)
+        bar.move -= bar.rate
+        intro.barMove.style.transform = 'translateX(-' + bar.move + 'px'
+      }
+    } else {
+      cancelAnimationFrame(bar.raf)
+    }
+  }
+  barMove()
+
   // 01
   introTimeouts[0] = setTimeout(function() {
-    document.getElementById('user-id').innerHTML = ' _' + makeid()
-    document.getElementById('intro-msg-01').classList.add('show')
+    intro.userId.innerHTML = ' _' + makeid()
+    intro.skip.classList.add('show')
+    intro.m01.classList.add('show')
+    intro.m01.classList.add('move')
+    intro.barBg.classList.add('show')
+    intro.barMove.classList.add('show')
   },baseTime)
   // 01 HIDE
   introTimeouts[1] = setTimeout(function() {
-    document.getElementById('intro-msg-01').classList.remove('show')
+    intro.m01.classList.remove('show')
   },baseTime+2500)
   // 02 SHOW
   introTimeouts[2] = setTimeout(function() {
-    document.getElementById('intro-msg-02').classList.add('show')
+    intro.m02.classList.add('show')
+    intro.m02.classList.add('move')
   },baseTime+3300)
   // 02 HIDE
   introTimeouts[3] = setTimeout(function() {
-    document.getElementById('intro-msg-02').classList.remove('show')
+    intro.m02.classList.remove('show')
   },baseTime+7000)
   // 03 SHOW
   introTimeouts[4] = setTimeout(function() {
-    document.getElementById('intro-msg-03').classList.add('show')
+    intro.m03.classList.add('show')
+    intro.m03.classList.add('move')
   },baseTime+7700)
   // 03 HIDE
   introTimeouts[5] = setTimeout(function() {
-    document.getElementById('intro-msg-03').classList.remove('show');
+    intro.m03.classList.remove('show');
     document.getElementById('cmd-outer').classList.add('cmd-in');
     document.getElementById('cmd-list-container').classList.add('cmd-in');
     document.getElementById('footer').classList.add('cmd-in');
     document.getElementById('header').classList.add('move-in');
-    document.getElementById('intro-msg-skip').style.display = 'none';
-
+    intro.barMove.classList.remove('show');
+    intro.barBg.classList.remove('show');
+    intro.skip.style.display = 'none';
+    bar.flag = false;
   },baseTime+10200)
   introTimeouts[6] = setTimeout(function() {
     loadWelcome()
