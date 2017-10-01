@@ -232,6 +232,8 @@ function introAnimCancel() {
   document.getElementById('footer').classList.add('cmd-in');
   document.getElementById('header').classList.add('move-in');
   document.getElementById('intro-msg-skip').style.display = 'none';
+  document.getElementById('intro-bar-bg').classList.remove('show');
+  document.getElementById('intro-bar-move').classList.remove('show');
   loadWelcome();
   cmdClear();
 }
