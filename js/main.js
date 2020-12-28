@@ -33,6 +33,7 @@ var heightCenterFactor;
 var theHeightDiv;
 var urlSearchChar = '#';
 var cmdInput;
+var cmdInputRaw;
 var cmdInputCombo = '';
 var cmdInputIDName = 'scroll-home';
 var cmdInputIdDom = document.getElementById(cmdInputIDName);
@@ -170,6 +171,7 @@ function introAnimation() {
       }
     } else {
       cancelAnimationFrame(bar.raf)
+      cmdClear()
     }
   }
   barMove()
@@ -234,6 +236,7 @@ function introAnimCancel() {
   document.getElementById('intro-msg-skip').style.display = 'none';
   document.getElementById('intro-bar-bg').classList.remove('show');
   document.getElementById('intro-bar-move').classList.remove('show');
+  postLoad = true;
   loadWelcome();
   cmdClear();
 }
@@ -311,15 +314,18 @@ document.addEventListener('keydown', function (e) {
   // BACKSPACE KEY
   if (e.which == 8) {
     e.preventDefault();
+    var cmdVal = cmdInputHiddenDom.value;
+    cmdInputHiddenDom.value = cmdVal.substring(0, cmdVal.length-1);
+    // Move cursor
 
-    if (backEnable) {
-      var cmdVal = cmdInputHiddenDom.value;
-      cmdInputHiddenDom.value = cmdVal.substring(0, cmdVal.length-1);
-      backEnable = false;
-    }
-    cmdInputHiddenDom.addEventListener('keyup', function(e) {
-      backEnable = true;
-    });
+    // if (backEnable) {
+    //   var cmdVal = cmdInputHiddenDom.value;
+    //   cmdInputHiddenDom.value = cmdVal.substring(0, cmdVal.length-1);
+    //   backEnable = false;
+    // }
+    // cmdInputHiddenDom.addEventListener('keyup', function(e) {
+    //   backEnable = true;
+    // });
 
   }
 
@@ -394,14 +400,21 @@ document.addEventListener('keydown', function (e) {
       articleHeadingCount++;
       articleNextEnable = false;
 
+      for (var i=0; i<cmdInputIdDom.querySelectorAll('article').length; i++) {
+        cmdInputIdDom.querySelectorAll('article')[i].classList.remove("active")
+      }
+      cmdInputIdDom.querySelectorAll('article')[articleHeadingCount].classList.add("active")
       Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 });
-
       Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
 
     }
 
     else if (articleNextEnable) {
       articleNextEnable = false;
+      for (var i=0; i<cmdInputIdDom.querySelectorAll('article').length; i++) {
+        cmdInputIdDom.querySelectorAll('article')[i].classList.remove("active")
+      }
+      cmdInputIdDom.querySelectorAll('article')[articleHeadingCount].classList.add("active")
       Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -30, easing: 'ease-out', duration: 100, axis: 'x', opacity: 1 });
       Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-in', duration: 100, axis: 'x', opacity: 1 });
     }
@@ -447,8 +460,11 @@ document.addEventListener('keydown', function (e) {
       articleHeadingCount--;
       articleNextEnable = false;
 
+      for (var i=0; i<cmdInputIdDom.querySelectorAll('article').length; i++) {
+        cmdInputIdDom.querySelectorAll('article')[i].classList.remove("active")
+      }
+      cmdInputIdDom.querySelectorAll('article')[articleHeadingCount].classList.add("active")
       Velocity(cmdInputIdDom.querySelectorAll('article')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', duration: 600, axis: 'x', opacity: 1 } );
-
       Velocity(cmdInputIdDom.querySelectorAll('h3')[articleHeadingCount],'scroll', { container: cmdInputIdDom.getElementsByClassName('section-inner')[0], offset: -70, easing: 'ease-out', delay: 200, duration: 10} );
 
       // cmdInputIdDom.getElementsByClassName('section-inner')[0].scrollTop = 0;
@@ -565,6 +581,7 @@ document.addEventListener('keydown', function (e) {
         }
         // STOP SCROLL ANIM
         window.cancelAnimationFrame(scrollCallD);
+        cmdClear()
       }
       // scrollOpStart = 20;
     });
@@ -730,22 +747,10 @@ cursor = window.setInterval(function() {
 // CHANGE UI W/ TAB
 // (NOTE) MESSING UP CSS SCRUB VALUES/SYNC
 // jQuery('html').keyup(function(e) {
-document.addEventListener('keyup', function(e) {
+// document.addEventListener('keyup', function(e) {
 
-  cmdInputHiddenDom.addEventListener('keyup', function() {
-    // disable if before load sequence
-    // if (postLoad) {
-      document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = this.value;
-    // } else {
-      // cmdClear();
-    // }
-  });
 
-  if (e.which === 9) {
-    e.preventDefault();
-  }
-
-});
+// });
 
 // (NOTE) NEED TO DISABLE 'BACKPACE' AS BROWSER BACK, BUT KEEP ON INPUT FIELD
 
@@ -771,12 +776,14 @@ cmdInputHiddenDom.addEventListener('keyup', function(e) {
     // CACHE INPUT, CONVERT TO LOWER CASE
     if (postLoad) {
       cmdInput = document.getElementById("cmd-input-hidden").value.toLowerCase();
+      cmdInputRaw = cmdInput
+      cmdInput = cmdInput.trim()
     }
 
-    // IF KEY IS ENTER
+    // Enter
     if(e.keyCode === 13 &&  cmdInput !== "" && cmdInput) {
 
-      if ( cmdInput === cmdPrev ) {
+      if (cmdInput === cmdPrev ) {
         cmdClear();
       }
       // LAUNCH FULLSCREEN
@@ -927,6 +934,20 @@ cmdInputHiddenDom.addEventListener('keyup', function(e) {
       }
 
     }
+    else {
+      // Typing output on FE
+      // disable if before load sequence
+      if (postLoad) {
+        document.getElementById('cmd').getElementsByTagName('span')[0].innerHTML = cmdInputRaw
+      } else {
+        cmdClear();
+      }
+      if (e.which === 9) {
+        e.preventDefault();
+      }
+
+    }
+
 
 });
 
@@ -940,7 +961,7 @@ function cliInputFocus() {
 function cmdCheck(x, y) {
 
   // document.getElementById('header-nav').innerHTML = '> ' + x;
-
+  x = x.trim()
   urlCmdHash = window.location.toString();
   var urlClean = urlCmdHash.split(urlSearchChar)[0];
   // CREATE ID NAME STRING FOR SCROLL ANCHOR
@@ -1153,7 +1174,7 @@ function setSectionHeight() {
 function cmdClear() {
 
   cmdInputHiddenDom.value = "";
-  document.getElementById("cmd").getElementsByTagName("span").innerHTML = "";
+  document.getElementById("cmd").getElementsByTagName("span")[0].innerHTML = "";
 
 }
 

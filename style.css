@@ -31,12 +31,17 @@ figure {
 
 article {
   margin: 0;
-
   display: table-cell;
   width: 650px;
   padding-right: 1200px;
   vertical-align: top !important;
   margin-left: -40px;
+  height: 0;
+  overflow-y: hidden;
+}
+article.active {
+  height: auto;
+  overflow-y: visible;
 }
 
 figure img {
